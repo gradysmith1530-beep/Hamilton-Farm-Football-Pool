@@ -1,0 +1,1011 @@
+{
+ "updated": "2026-08-26T12:52:47+00:00",
+ "week": 1,
+ "owners": [
+  "Kevin",
+  "Austin",
+  "Moskows",
+  "MikeChuck",
+  "Grady",
+  "Woj",
+  "Rick",
+  "Fritzletta"
+ ],
+ "groups": [
+  "NFC",
+  "AFC",
+  "SEC",
+  "BIG10",
+  "ACC",
+  "BIG12"
+ ],
+ "totals": {
+  "Kevin": 0,
+  "Austin": 0,
+  "Moskows": 0,
+  "MikeChuck": 0,
+  "Grady": 0,
+  "Woj": 0,
+  "Rick": 0,
+  "Fritzletta": 0
+ },
+ "losses": {
+  "Kevin": 0,
+  "Austin": 0,
+  "Moskows": 0,
+  "MikeChuck": 0,
+  "Grady": 0,
+  "Woj": 0,
+  "Rick": 0,
+  "Fritzletta": 0
+ },
+ "records": {
+  "Rams": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Saints": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Texans": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Bengals": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Georgia": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Florida": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Wisconsin": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "UCLA": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Virginia": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Wake Forrest": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Utah": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Colorado": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Packers": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Bears": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Raiders": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Dolphins": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Alabama": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "S Carolina": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Oregon": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Washington": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Notre Dame": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "N Carolina": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "TCU": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "UCF": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Falcons": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Buccaneers": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Chargers": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Titans": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Texas": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Ole Miss": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Ohio State": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Rutgers": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "GA Tech": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Pitt": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "AZ State": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Iowa State": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Seahawks": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Cowboys": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Broncos": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Colts": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Auburn": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Arkansas": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "USC": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Nebraska": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Clemson": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "FL State": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Arizona": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Baylor": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Eagles": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Vikings": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Patriots": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Bills": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Tennessee": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Vandy": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Minnesota": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Maryland": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Cal": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "VA Tech": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Houston": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "K State": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Redskins": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Cardinals": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Steelers": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Jets": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "LSU": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Oklahoma": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Penn State": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Michigan": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Miami": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "NC State": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Kansas": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Okla State": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Lions": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Giants": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Chiefs": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Jaguars": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Missouri": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Miss State": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Indiana": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Iowa": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Louisville": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Duke": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Cincinnati": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "West VA": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "49ers": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Panthers": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Ravens": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Browns": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Tex A&M": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Kentucky": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Illinois": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "NWestern": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "SMU": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Syracuse": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "Texas Tech": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  },
+  "BYU": {
+   "w": 0,
+   "l": 0,
+   "t": 0
+  }
+ },
+ "roster": [
+  {
+   "label": "Rams",
+   "owner": "Kevin",
+   "group": "NFC"
+  },
+  {
+   "label": "Saints",
+   "owner": "Kevin",
+   "group": "NFC"
+  },
+  {
+   "label": "Texans",
+   "owner": "Kevin",
+   "group": "AFC"
+  },
+  {
+   "label": "Bengals",
+   "owner": "Kevin",
+   "group": "AFC"
+  },
+  {
+   "label": "Georgia",
+   "owner": "Kevin",
+   "group": "SEC"
+  },
+  {
+   "label": "Florida",
+   "owner": "Kevin",
+   "group": "SEC"
+  },
+  {
+   "label": "Wisconsin",
+   "owner": "Kevin",
+   "group": "BIG10"
+  },
+  {
+   "label": "UCLA",
+   "owner": "Kevin",
+   "group": "BIG10"
+  },
+  {
+   "label": "Virginia",
+   "owner": "Kevin",
+   "group": "ACC"
+  },
+  {
+   "label": "Wake Forrest",
+   "owner": "Kevin",
+   "group": "ACC"
+  },
+  {
+   "label": "Utah",
+   "owner": "Kevin",
+   "group": "BIG12"
+  },
+  {
+   "label": "Colorado",
+   "owner": "Kevin",
+   "group": "BIG12"
+  },
+  {
+   "label": "Packers",
+   "owner": "Austin",
+   "group": "NFC"
+  },
+  {
+   "label": "Bears",
+   "owner": "Austin",
+   "group": "NFC"
+  },
+  {
+   "label": "Raiders",
+   "owner": "Austin",
+   "group": "AFC"
+  },
+  {
+   "label": "Dolphins",
+   "owner": "Austin",
+   "group": "AFC"
+  },
+  {
+   "label": "Alabama",
+   "owner": "Austin",
+   "group": "SEC"
+  },
+  {
+   "label": "S Carolina",
+   "owner": "Austin",
+   "group": "SEC"
+  },
+  {
+   "label": "Oregon",
+   "owner": "Austin",
+   "group": "BIG10"
+  },
+  {
+   "label": "Washington",
+   "owner": "Austin",
+   "group": "BIG10"
+  },
+  {
+   "label": "Notre Dame",
+   "owner": "Austin",
+   "group": "ACC"
+  },
+  {
+   "label": "N Carolina",
+   "owner": "Austin",
+   "group": "ACC"
+  },
+  {
+   "label": "TCU",
+   "owner": "Austin",
+   "group": "BIG12"
+  },
+  {
+   "label": "UCF",
+   "owner": "Austin",
+   "group": "BIG12"
+  },
+  {
+   "label": "Falcons",
+   "owner": "Moskows",
+   "group": "NFC"
+  },
+  {
+   "label": "Buccaneers",
+   "owner": "Moskows",
+   "group": "NFC"
+  },
+  {
+   "label": "Chargers",
+   "owner": "Moskows",
+   "group": "AFC"
+  },
+  {
+   "label": "Titans",
+   "owner": "Moskows",
+   "group": "AFC"
+  },
+  {
+   "label": "Texas",
+   "owner": "Moskows",
+   "group": "SEC"
+  },
+  {
+   "label": "Ole Miss",
+   "owner": "Moskows",
+   "group": "SEC"
+  },
+  {
+   "label": "Ohio State",
+   "owner": "Moskows",
+   "group": "BIG10"
+  },
+  {
+   "label": "Rutgers",
+   "owner": "Moskows",
+   "group": "BIG10"
+  },
+  {
+   "label": "GA Tech",
+   "owner": "Moskows",
+   "group": "ACC"
+  },
+  {
+   "label": "Pitt",
+   "owner": "Moskows",
+   "group": "ACC"
+  },
+  {
+   "label": "AZ State",
+   "owner": "Moskows",
+   "group": "BIG12"
+  },
+  {
+   "label": "Iowa State",
+   "owner": "Moskows",
+   "group": "BIG12"
+  },
+  {
+   "label": "Seahawks",
+   "owner": "MikeChuck",
+   "group": "NFC"
+  },
+  {
+   "label": "Cowboys",
+   "owner": "MikeChuck",
+   "group": "NFC"
+  },
+  {
+   "label": "Broncos",
+   "owner": "MikeChuck",
+   "group": "AFC"
+  },
+  {
+   "label": "Colts",
+   "owner": "MikeChuck",
+   "group": "AFC"
+  },
+  {
+   "label": "Auburn",
+   "owner": "MikeChuck",
+   "group": "SEC"
+  },
+  {
+   "label": "Arkansas",
+   "owner": "MikeChuck",
+   "group": "SEC"
+  },
+  {
+   "label": "USC",
+   "owner": "MikeChuck",
+   "group": "BIG10"
+  },
+  {
+   "label": "Nebraska",
+   "owner": "MikeChuck",
+   "group": "BIG10"
+  },
+  {
+   "label": "Clemson",
+   "owner": "MikeChuck",
+   "group": "ACC"
+  },
+  {
+   "label": "FL State",
+   "owner": "MikeChuck",
+   "group": "ACC"
+  },
+  {
+   "label": "Arizona",
+   "owner": "MikeChuck",
+   "group": "BIG12"
+  },
+  {
+   "label": "Baylor",
+   "owner": "MikeChuck",
+   "group": "BIG12"
+  },
+  {
+   "label": "Eagles",
+   "owner": "Grady",
+   "group": "NFC"
+  },
+  {
+   "label": "Vikings",
+   "owner": "Grady",
+   "group": "NFC"
+  },
+  {
+   "label": "Patriots",
+   "owner": "Grady",
+   "group": "AFC"
+  },
+  {
+   "label": "Bills",
+   "owner": "Grady",
+   "group": "AFC"
+  },
+  {
+   "label": "Tennessee",
+   "owner": "Grady",
+   "group": "SEC"
+  },
+  {
+   "label": "Vandy",
+   "owner": "Grady",
+   "group": "SEC"
+  },
+  {
+   "label": "Minnesota",
+   "owner": "Grady",
+   "group": "BIG10"
+  },
+  {
+   "label": "Maryland",
+   "owner": "Grady",
+   "group": "BIG10"
+  },
+  {
+   "label": "Cal",
+   "owner": "Grady",
+   "group": "ACC"
+  },
+  {
+   "label": "VA Tech",
+   "owner": "Grady",
+   "group": "ACC"
+  },
+  {
+   "label": "Houston",
+   "owner": "Grady",
+   "group": "BIG12"
+  },
+  {
+   "label": "K State",
+   "owner": "Grady",
+   "group": "BIG12"
+  },
+  {
+   "label": "Redskins",
+   "owner": "Woj",
+   "group": "NFC"
+  },
+  {
+   "label": "Cardinals",
+   "owner": "Woj",
+   "group": "NFC"
+  },
+  {
+   "label": "Steelers",
+   "owner": "Woj",
+   "group": "AFC"
+  },
+  {
+   "label": "Jets",
+   "owner": "Woj",
+   "group": "AFC"
+  },
+  {
+   "label": "LSU",
+   "owner": "Woj",
+   "group": "SEC"
+  },
+  {
+   "label": "Oklahoma",
+   "owner": "Woj",
+   "group": "SEC"
+  },
+  {
+   "label": "Penn State",
+   "owner": "Woj",
+   "group": "BIG10"
+  },
+  {
+   "label": "Michigan",
+   "owner": "Woj",
+   "group": "BIG10"
+  },
+  {
+   "label": "Miami",
+   "owner": "Woj",
+   "group": "ACC"
+  },
+  {
+   "label": "NC State",
+   "owner": "Woj",
+   "group": "ACC"
+  },
+  {
+   "label": "Kansas",
+   "owner": "Woj",
+   "group": "BIG12"
+  },
+  {
+   "label": "Okla State",
+   "owner": "Woj",
+   "group": "BIG12"
+  },
+  {
+   "label": "Lions",
+   "owner": "Rick",
+   "group": "NFC"
+  },
+  {
+   "label": "Giants",
+   "owner": "Rick",
+   "group": "NFC"
+  },
+  {
+   "label": "Chiefs",
+   "owner": "Rick",
+   "group": "AFC"
+  },
+  {
+   "label": "Jaguars",
+   "owner": "Rick",
+   "group": "AFC"
+  },
+  {
+   "label": "Missouri",
+   "owner": "Rick",
+   "group": "SEC"
+  },
+  {
+   "label": "Miss State",
+   "owner": "Rick",
+   "group": "SEC"
+  },
+  {
+   "label": "Indiana",
+   "owner": "Rick",
+   "group": "BIG10"
+  },
+  {
+   "label": "Iowa",
+   "owner": "Rick",
+   "group": "BIG10"
+  },
+  {
+   "label": "Louisville",
+   "owner": "Rick",
+   "group": "ACC"
+  },
+  {
+   "label": "Duke",
+   "owner": "Rick",
+   "group": "ACC"
+  },
+  {
+   "label": "Cincinnati",
+   "owner": "Rick",
+   "group": "BIG12"
+  },
+  {
+   "label": "West VA",
+   "owner": "Rick",
+   "group": "BIG12"
+  },
+  {
+   "label": "49ers",
+   "owner": "Fritzletta",
+   "group": "NFC"
+  },
+  {
+   "label": "Panthers",
+   "owner": "Fritzletta",
+   "group": "NFC"
+  },
+  {
+   "label": "Ravens",
+   "owner": "Fritzletta",
+   "group": "AFC"
+  },
+  {
+   "label": "Browns",
+   "owner": "Fritzletta",
+   "group": "AFC"
+  },
+  {
+   "label": "Tex A&M",
+   "owner": "Fritzletta",
+   "group": "SEC"
+  },
+  {
+   "label": "Kentucky",
+   "owner": "Fritzletta",
+   "group": "SEC"
+  },
+  {
+   "label": "Illinois",
+   "owner": "Fritzletta",
+   "group": "BIG10"
+  },
+  {
+   "label": "NWestern",
+   "owner": "Fritzletta",
+   "group": "BIG10"
+  },
+  {
+   "label": "SMU",
+   "owner": "Fritzletta",
+   "group": "ACC"
+  },
+  {
+   "label": "Syracuse",
+   "owner": "Fritzletta",
+   "group": "ACC"
+  },
+  {
+   "label": "Texas Tech",
+   "owner": "Fritzletta",
+   "group": "BIG12"
+  },
+  {
+   "label": "BYU",
+   "owner": "Fritzletta",
+   "group": "BIG12"
+  }
+ ],
+ "weeks": [],
+ "problems": {
+  "unmatched": [],
+  "noRecord": []
+ }
+}

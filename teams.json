@@ -1,0 +1,695 @@
+{
+ "seasonStart": "2026-08-24",
+ "owners": [
+  "Kevin",
+  "Austin",
+  "Moskows",
+  "MikeChuck",
+  "Grady",
+  "Woj",
+  "Rick",
+  "Fritzletta"
+ ],
+ "groups": [
+  "NFC",
+  "AFC",
+  "SEC",
+  "BIG10",
+  "ACC",
+  "BIG12"
+ ],
+ "teams": [
+  {
+   "label": "Rams",
+   "owner": "Kevin",
+   "group": "NFC",
+   "league": "nfl",
+   "espn": "Los Angeles Rams"
+  },
+  {
+   "label": "Saints",
+   "owner": "Kevin",
+   "group": "NFC",
+   "league": "nfl",
+   "espn": "New Orleans Saints"
+  },
+  {
+   "label": "Texans",
+   "owner": "Kevin",
+   "group": "AFC",
+   "league": "nfl",
+   "espn": "Houston Texans"
+  },
+  {
+   "label": "Bengals",
+   "owner": "Kevin",
+   "group": "AFC",
+   "league": "nfl",
+   "espn": "Cincinnati Bengals"
+  },
+  {
+   "label": "Georgia",
+   "owner": "Kevin",
+   "group": "SEC",
+   "league": "college-football",
+   "espn": "Georgia Bulldogs"
+  },
+  {
+   "label": "Florida",
+   "owner": "Kevin",
+   "group": "SEC",
+   "league": "college-football",
+   "espn": "Florida Gators"
+  },
+  {
+   "label": "Wisconsin",
+   "owner": "Kevin",
+   "group": "BIG10",
+   "league": "college-football",
+   "espn": "Wisconsin Badgers"
+  },
+  {
+   "label": "UCLA",
+   "owner": "Kevin",
+   "group": "BIG10",
+   "league": "college-football",
+   "espn": "UCLA Bruins"
+  },
+  {
+   "label": "Virginia",
+   "owner": "Kevin",
+   "group": "ACC",
+   "league": "college-football",
+   "espn": "Virginia Cavaliers"
+  },
+  {
+   "label": "Wake Forrest",
+   "owner": "Kevin",
+   "group": "ACC",
+   "league": "college-football",
+   "espn": "Wake Forest Demon Deacons"
+  },
+  {
+   "label": "Utah",
+   "owner": "Kevin",
+   "group": "BIG12",
+   "league": "college-football",
+   "espn": "Utah Utes"
+  },
+  {
+   "label": "Colorado",
+   "owner": "Kevin",
+   "group": "BIG12",
+   "league": "college-football",
+   "espn": "Colorado Buffaloes"
+  },
+  {
+   "label": "Packers",
+   "owner": "Austin",
+   "group": "NFC",
+   "league": "nfl",
+   "espn": "Green Bay Packers"
+  },
+  {
+   "label": "Bears",
+   "owner": "Austin",
+   "group": "NFC",
+   "league": "nfl",
+   "espn": "Chicago Bears"
+  },
+  {
+   "label": "Raiders",
+   "owner": "Austin",
+   "group": "AFC",
+   "league": "nfl",
+   "espn": "Las Vegas Raiders"
+  },
+  {
+   "label": "Dolphins",
+   "owner": "Austin",
+   "group": "AFC",
+   "league": "nfl",
+   "espn": "Miami Dolphins"
+  },
+  {
+   "label": "Alabama",
+   "owner": "Austin",
+   "group": "SEC",
+   "league": "college-football",
+   "espn": "Alabama Crimson Tide"
+  },
+  {
+   "label": "S Carolina",
+   "owner": "Austin",
+   "group": "SEC",
+   "league": "college-football",
+   "espn": "South Carolina Gamecocks"
+  },
+  {
+   "label": "Oregon",
+   "owner": "Austin",
+   "group": "BIG10",
+   "league": "college-football",
+   "espn": "Oregon Ducks"
+  },
+  {
+   "label": "Washington",
+   "owner": "Austin",
+   "group": "BIG10",
+   "league": "college-football",
+   "espn": "Washington Huskies"
+  },
+  {
+   "label": "Notre Dame",
+   "owner": "Austin",
+   "group": "ACC",
+   "league": "college-football",
+   "espn": "Notre Dame Fighting Irish"
+  },
+  {
+   "label": "N Carolina",
+   "owner": "Austin",
+   "group": "ACC",
+   "league": "college-football",
+   "espn": "North Carolina Tar Heels"
+  },
+  {
+   "label": "TCU",
+   "owner": "Austin",
+   "group": "BIG12",
+   "league": "college-football",
+   "espn": "TCU Horned Frogs"
+  },
+  {
+   "label": "UCF",
+   "owner": "Austin",
+   "group": "BIG12",
+   "league": "college-football",
+   "espn": "UCF Knights"
+  },
+  {
+   "label": "Falcons",
+   "owner": "Moskows",
+   "group": "NFC",
+   "league": "nfl",
+   "espn": "Atlanta Falcons"
+  },
+  {
+   "label": "Buccaneers",
+   "owner": "Moskows",
+   "group": "NFC",
+   "league": "nfl",
+   "espn": "Tampa Bay Buccaneers"
+  },
+  {
+   "label": "Chargers",
+   "owner": "Moskows",
+   "group": "AFC",
+   "league": "nfl",
+   "espn": "Los Angeles Chargers"
+  },
+  {
+   "label": "Titans",
+   "owner": "Moskows",
+   "group": "AFC",
+   "league": "nfl",
+   "espn": "Tennessee Titans"
+  },
+  {
+   "label": "Texas",
+   "owner": "Moskows",
+   "group": "SEC",
+   "league": "college-football",
+   "espn": "Texas Longhorns"
+  },
+  {
+   "label": "Ole Miss",
+   "owner": "Moskows",
+   "group": "SEC",
+   "league": "college-football",
+   "espn": "Ole Miss Rebels"
+  },
+  {
+   "label": "Ohio State",
+   "owner": "Moskows",
+   "group": "BIG10",
+   "league": "college-football",
+   "espn": "Ohio State Buckeyes"
+  },
+  {
+   "label": "Rutgers",
+   "owner": "Moskows",
+   "group": "BIG10",
+   "league": "college-football",
+   "espn": "Rutgers Scarlet Knights"
+  },
+  {
+   "label": "GA Tech",
+   "owner": "Moskows",
+   "group": "ACC",
+   "league": "college-football",
+   "espn": "Georgia Tech Yellow Jackets"
+  },
+  {
+   "label": "Pitt",
+   "owner": "Moskows",
+   "group": "ACC",
+   "league": "college-football",
+   "espn": "Pittsburgh Panthers"
+  },
+  {
+   "label": "AZ State",
+   "owner": "Moskows",
+   "group": "BIG12",
+   "league": "college-football",
+   "espn": "Arizona State Sun Devils"
+  },
+  {
+   "label": "Iowa State",
+   "owner": "Moskows",
+   "group": "BIG12",
+   "league": "college-football",
+   "espn": "Iowa State Cyclones"
+  },
+  {
+   "label": "Seahawks",
+   "owner": "MikeChuck",
+   "group": "NFC",
+   "league": "nfl",
+   "espn": "Seattle Seahawks"
+  },
+  {
+   "label": "Cowboys",
+   "owner": "MikeChuck",
+   "group": "NFC",
+   "league": "nfl",
+   "espn": "Dallas Cowboys"
+  },
+  {
+   "label": "Broncos",
+   "owner": "MikeChuck",
+   "group": "AFC",
+   "league": "nfl",
+   "espn": "Denver Broncos"
+  },
+  {
+   "label": "Colts",
+   "owner": "MikeChuck",
+   "group": "AFC",
+   "league": "nfl",
+   "espn": "Indianapolis Colts"
+  },
+  {
+   "label": "Auburn",
+   "owner": "MikeChuck",
+   "group": "SEC",
+   "league": "college-football",
+   "espn": "Auburn Tigers"
+  },
+  {
+   "label": "Arkansas",
+   "owner": "MikeChuck",
+   "group": "SEC",
+   "league": "college-football",
+   "espn": "Arkansas Razorbacks"
+  },
+  {
+   "label": "USC",
+   "owner": "MikeChuck",
+   "group": "BIG10",
+   "league": "college-football",
+   "espn": "USC Trojans"
+  },
+  {
+   "label": "Nebraska",
+   "owner": "MikeChuck",
+   "group": "BIG10",
+   "league": "college-football",
+   "espn": "Nebraska Cornhuskers"
+  },
+  {
+   "label": "Clemson",
+   "owner": "MikeChuck",
+   "group": "ACC",
+   "league": "college-football",
+   "espn": "Clemson Tigers"
+  },
+  {
+   "label": "FL State",
+   "owner": "MikeChuck",
+   "group": "ACC",
+   "league": "college-football",
+   "espn": "Florida State Seminoles"
+  },
+  {
+   "label": "Arizona",
+   "owner": "MikeChuck",
+   "group": "BIG12",
+   "league": "college-football",
+   "espn": "Arizona Wildcats"
+  },
+  {
+   "label": "Baylor",
+   "owner": "MikeChuck",
+   "group": "BIG12",
+   "league": "college-football",
+   "espn": "Baylor Bears"
+  },
+  {
+   "label": "Eagles",
+   "owner": "Grady",
+   "group": "NFC",
+   "league": "nfl",
+   "espn": "Philadelphia Eagles"
+  },
+  {
+   "label": "Vikings",
+   "owner": "Grady",
+   "group": "NFC",
+   "league": "nfl",
+   "espn": "Minnesota Vikings"
+  },
+  {
+   "label": "Patriots",
+   "owner": "Grady",
+   "group": "AFC",
+   "league": "nfl",
+   "espn": "New England Patriots"
+  },
+  {
+   "label": "Bills",
+   "owner": "Grady",
+   "group": "AFC",
+   "league": "nfl",
+   "espn": "Buffalo Bills"
+  },
+  {
+   "label": "Tennessee",
+   "owner": "Grady",
+   "group": "SEC",
+   "league": "college-football",
+   "espn": "Tennessee Volunteers"
+  },
+  {
+   "label": "Vandy",
+   "owner": "Grady",
+   "group": "SEC",
+   "league": "college-football",
+   "espn": "Vanderbilt Commodores"
+  },
+  {
+   "label": "Minnesota",
+   "owner": "Grady",
+   "group": "BIG10",
+   "league": "college-football",
+   "espn": "Minnesota Golden Gophers"
+  },
+  {
+   "label": "Maryland",
+   "owner": "Grady",
+   "group": "BIG10",
+   "league": "college-football",
+   "espn": "Maryland Terrapins"
+  },
+  {
+   "label": "Cal",
+   "owner": "Grady",
+   "group": "ACC",
+   "league": "college-football",
+   "espn": "California Golden Bears"
+  },
+  {
+   "label": "VA Tech",
+   "owner": "Grady",
+   "group": "ACC",
+   "league": "college-football",
+   "espn": "Virginia Tech Hokies"
+  },
+  {
+   "label": "Houston",
+   "owner": "Grady",
+   "group": "BIG12",
+   "league": "college-football",
+   "espn": "Houston Cougars"
+  },
+  {
+   "label": "K State",
+   "owner": "Grady",
+   "group": "BIG12",
+   "league": "college-football",
+   "espn": "Kansas State Wildcats"
+  },
+  {
+   "label": "Redskins",
+   "owner": "Woj",
+   "group": "NFC",
+   "league": "nfl",
+   "espn": "Washington Commanders"
+  },
+  {
+   "label": "Cardinals",
+   "owner": "Woj",
+   "group": "NFC",
+   "league": "nfl",
+   "espn": "Arizona Cardinals"
+  },
+  {
+   "label": "Steelers",
+   "owner": "Woj",
+   "group": "AFC",
+   "league": "nfl",
+   "espn": "Pittsburgh Steelers"
+  },
+  {
+   "label": "Jets",
+   "owner": "Woj",
+   "group": "AFC",
+   "league": "nfl",
+   "espn": "New York Jets"
+  },
+  {
+   "label": "LSU",
+   "owner": "Woj",
+   "group": "SEC",
+   "league": "college-football",
+   "espn": "LSU Tigers"
+  },
+  {
+   "label": "Oklahoma",
+   "owner": "Woj",
+   "group": "SEC",
+   "league": "college-football",
+   "espn": "Oklahoma Sooners"
+  },
+  {
+   "label": "Penn State",
+   "owner": "Woj",
+   "group": "BIG10",
+   "league": "college-football",
+   "espn": "Penn State Nittany Lions"
+  },
+  {
+   "label": "Michigan",
+   "owner": "Woj",
+   "group": "BIG10",
+   "league": "college-football",
+   "espn": "Michigan Wolverines"
+  },
+  {
+   "label": "Miami",
+   "owner": "Woj",
+   "group": "ACC",
+   "league": "college-football",
+   "espn": "Miami Hurricanes"
+  },
+  {
+   "label": "NC State",
+   "owner": "Woj",
+   "group": "ACC",
+   "league": "college-football",
+   "espn": "NC State Wolfpack"
+  },
+  {
+   "label": "Kansas",
+   "owner": "Woj",
+   "group": "BIG12",
+   "league": "college-football",
+   "espn": "Kansas Jayhawks"
+  },
+  {
+   "label": "Okla State",
+   "owner": "Woj",
+   "group": "BIG12",
+   "league": "college-football",
+   "espn": "Oklahoma State Cowboys"
+  },
+  {
+   "label": "Lions",
+   "owner": "Rick",
+   "group": "NFC",
+   "league": "nfl",
+   "espn": "Detroit Lions"
+  },
+  {
+   "label": "Giants",
+   "owner": "Rick",
+   "group": "NFC",
+   "league": "nfl",
+   "espn": "New York Giants"
+  },
+  {
+   "label": "Chiefs",
+   "owner": "Rick",
+   "group": "AFC",
+   "league": "nfl",
+   "espn": "Kansas City Chiefs"
+  },
+  {
+   "label": "Jaguars",
+   "owner": "Rick",
+   "group": "AFC",
+   "league": "nfl",
+   "espn": "Jacksonville Jaguars"
+  },
+  {
+   "label": "Missouri",
+   "owner": "Rick",
+   "group": "SEC",
+   "league": "college-football",
+   "espn": "Missouri Tigers"
+  },
+  {
+   "label": "Miss State",
+   "owner": "Rick",
+   "group": "SEC",
+   "league": "college-football",
+   "espn": "Mississippi State Bulldogs"
+  },
+  {
+   "label": "Indiana",
+   "owner": "Rick",
+   "group": "BIG10",
+   "league": "college-football",
+   "espn": "Indiana Hoosiers"
+  },
+  {
+   "label": "Iowa",
+   "owner": "Rick",
+   "group": "BIG10",
+   "league": "college-football",
+   "espn": "Iowa Hawkeyes"
+  },
+  {
+   "label": "Louisville",
+   "owner": "Rick",
+   "group": "ACC",
+   "league": "college-football",
+   "espn": "Louisville Cardinals"
+  },
+  {
+   "label": "Duke",
+   "owner": "Rick",
+   "group": "ACC",
+   "league": "college-football",
+   "espn": "Duke Blue Devils"
+  },
+  {
+   "label": "Cincinnati",
+   "owner": "Rick",
+   "group": "BIG12",
+   "league": "college-football",
+   "espn": "Cincinnati Bearcats"
+  },
+  {
+   "label": "West VA",
+   "owner": "Rick",
+   "group": "BIG12",
+   "league": "college-football",
+   "espn": "West Virginia Mountaineers"
+  },
+  {
+   "label": "49ers",
+   "owner": "Fritzletta",
+   "group": "NFC",
+   "league": "nfl",
+   "espn": "San Francisco 49ers"
+  },
+  {
+   "label": "Panthers",
+   "owner": "Fritzletta",
+   "group": "NFC",
+   "league": "nfl",
+   "espn": "Carolina Panthers"
+  },
+  {
+   "label": "Ravens",
+   "owner": "Fritzletta",
+   "group": "AFC",
+   "league": "nfl",
+   "espn": "Baltimore Ravens"
+  },
+  {
+   "label": "Browns",
+   "owner": "Fritzletta",
+   "group": "AFC",
+   "league": "nfl",
+   "espn": "Cleveland Browns"
+  },
+  {
+   "label": "Tex A&M",
+   "owner": "Fritzletta",
+   "group": "SEC",
+   "league": "college-football",
+   "espn": "Texas A&M Aggies"
+  },
+  {
+   "label": "Kentucky",
+   "owner": "Fritzletta",
+   "group": "SEC",
+   "league": "college-football",
+   "espn": "Kentucky Wildcats"
+  },
+  {
+   "label": "Illinois",
+   "owner": "Fritzletta",
+   "group": "BIG10",
+   "league": "college-football",
+   "espn": "Illinois Fighting Illini"
+  },
+  {
+   "label": "NWestern",
+   "owner": "Fritzletta",
+   "group": "BIG10",
+   "league": "college-football",
+   "espn": "Northwestern Wildcats"
+  },
+  {
+   "label": "SMU",
+   "owner": "Fritzletta",
+   "group": "ACC",
+   "league": "college-football",
+   "espn": "SMU Mustangs"
+  },
+  {
+   "label": "Syracuse",
+   "owner": "Fritzletta",
+   "group": "ACC",
+   "league": "college-football",
+   "espn": "Syracuse Orange"
+  },
+  {
+   "label": "Texas Tech",
+   "owner": "Fritzletta",
+   "group": "BIG12",
+   "league": "college-football",
+   "espn": "Texas Tech Red Raiders"
+  },
+  {
+   "label": "BYU",
+   "owner": "Fritzletta",
+   "group": "BIG12",
+   "league": "college-football",
+   "espn": "BYU Cougars"
+  }
+ ]
+}
