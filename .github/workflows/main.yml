@@ -1,4 +1,4 @@
-name: Update standings
+name: Update standings 
  
 on:
   schedule:
