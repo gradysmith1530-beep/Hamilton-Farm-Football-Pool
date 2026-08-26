@@ -139,6 +139,11 @@
   .game.lost .when b{color:var(--flag)}
   .game.bye{opacity:.5}
   .game.bye .opp{font-style:italic}
+  .weekbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 16px}
+  .weekbar .arrow{font-size:15px;line-height:1;padding:6px 12px}
+  .weekbar .lbl{font-family:var(--disp);font-size:20px;text-transform:uppercase;letter-spacing:.04em}
+  .weekbar .sub{font-family:var(--mono);font-size:10.5px;color:var(--dim);letter-spacing:.08em;text-transform:uppercase}
+  .weekbar .now{font-family:var(--mono);font-size:10px;letter-spacing:.08em}
   .chip{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;
         border:1px solid rgba(255,176,32,.45);color:var(--amber);border-radius:2px;padding:1px 4px;margin-left:5px;
         white-space:nowrap}
@@ -174,13 +179,16 @@
     <div class="status" id="status">Loading this week's games…</div>
   </div>
 
+  <div class="weekbar" id="weekbar"></div>
   <div class="tabs" id="tabs"></div>
   <div id="slate"><div class="empty">Reading the schedule…</div></div>
 
   <div class="foot">
     <p><b>Where this comes from.</b> ESPN's public scoreboard, read fresh every time you open the page. Scores and clocks update live during games; the page re-reads itself every minute while anything is in progress.</p>
     <p><b>The line.</b> The spread is shown from your team's side — <b>-3.5</b> means your team is favored by three and a half. O/U is the total. These are ESPN's posted numbers, not a shopped best price.</p>
-    <p><b>Byes.</b> Any team with no game on the slate shows as off this week. In college that's an open date, in the NFL it's the bye.</p>
+    <p><b>Byes.</b> Any team with no game that week shows as off. In college that's an open date, in the NFL it's the bye.</p>
+    <p style="opacity:.55"><b>Build</b> <span id="build"></span></p>
+    <p><b>Regular season only.</b> Bowl games, the college playoff the NFL playoffs and conference title games are not shown and do not count in the pool — college runs 15 weeks, the NFL 18.</p>
   </div>
 
 </div>
@@ -190,12 +198,16 @@ const HOSTS = [
   "https://site.api.espn.com/apis/site/v2/sports/football",
   "https://site.web.api.espn.com/apis/site/v2/sports/football"
 ];
-const PATHS = {
-  "nfl": "/nfl/scoreboard",
-  "college-football": "/college-football/scoreboard?groups=80&limit=300"
-};
+const MAX_WEEK = {"nfl": 18, "college-football": 15};   // regular season only
+const pathFor = (league, week) => (league === 'nfl'
+    ? '/nfl/scoreboard?seasontype=2'
+    : '/college-football/scoreboard?groups=80&limit=300&seasontype=2')
+  + (week ? '&week=' + week : '');
 
-let ROSTER = null, GAMES = {}, OWNER_OF = {}, view = "all", timer = null, poolOnly = true;
+const BUILD = "2026-08-26e";
+let ROSTER = null, GAMES = {}, OWNER_OF = {}, OWNER_BY_ID = {}, chipHits = 0;
+let view = "all", timer = null, poolOnly = true;
+let base = {}, offset = 0, shown = {}, clamped = {};   // base = this week's numbers; offset = how far we've paged
 
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const norm = s => String(s||"").toLowerCase().replace(/[^a-z0-9]/g,"");
@@ -227,11 +239,13 @@ function indexGames(json, league){
   return out;
 }
 
-function ownerChip(teamObj){
+function ownerChip(teamObj, league){
   const t = teamObj || {};
-  for (const key of [t.displayName, t.shortDisplayName, t.location, t.name, t.abbreviation]){
+  const byId = t.id && OWNER_BY_ID[league + ':' + t.id];
+  if (byId){ chipHits++; return '<span class="chip">' + esc(byId) + '</span>'; }
+  for (const key of [t.displayName, t.shortDisplayName, t.location, t.name, t.abbreviation, t.nickname]){
     const hit = key && OWNER_OF[norm(key)];
-    if (hit) return '<span class="chip">' + esc(hit) + '</span>';
+    if (hit){ chipHits++; return '<span class="chip">' + esc(hit) + '</span>'; }
   }
   return '';
 }
@@ -292,9 +306,14 @@ function render(){
     const mine = ROSTER.teams.filter(t => t.owner === owner);
     const rows = mine.map(t => {
       const entry = GAMES[t.league] && (GAMES[t.league][norm(t.espn)] || GAMES[t.league][norm(t.label)]);
-      if (!entry) return {sort: 9e15, html:
-        '<div class="game bye"><span class="tn">' + esc(t.label) + '</span>' +
-        '<span class="opp">off this week</span><span class="when">—</span><span class="line">—</span></div>'};
+      if (!entry){
+        const why = clamped[t.league] === 1 ? 'regular season over'
+                  : clamped[t.league] === -1 ? 'season not started yet'
+                  : 'off this week';
+        return {sort: 9e15, html:
+          '<div class="game bye"><span class="tn">' + esc(t.label) + '</span>' +
+          '<span class="opp">' + why + '</span><span class="when">—</span><span class="line">—</span></div>'};
+      }
       const opp = opponentOf(entry);
       const home = entry.me.homeAway === "home";
       const when = whenText(entry);
@@ -304,7 +323,7 @@ function render(){
           '<span class="tn">' + esc(t.label) + '</span>' +
           '<span class="opp">' + (home ? 'vs ' : 'at ') + rankOf(opp) +
             '<b>' + esc((opp.team||{}).shortDisplayName || (opp.team||{}).displayName || 'TBD') + '</b>' +
-            ownerChip(opp.team) + '</span>' +
+            ownerChip(opp.team, t.league) + '</span>' +
           '<span class="when">' + when.html + '</span>' +
           '<span class="line">' + lineText(entry) + '</span>' +
         '</div>'};
@@ -317,7 +336,7 @@ function render(){
   }).join('');
 
   clearInterval(timer);
-  if (liveIds.size) timer = setInterval(load, 60000);
+  if (liveIds.size && offset === 0) timer = setInterval(load, 60000);
   return liveIds.size;
 }
 
@@ -333,7 +352,7 @@ function renderSlate(){
       const comps = entry.comp.competitors || [];
       const home = comps.find(c => c.homeAway === 'home') || comps[0] || {};
       const away = comps.find(c => c.homeAway === 'away') || comps[1] || {};
-      const chips = ownerChip(home.team) + ownerChip(away.team);
+      const chips = ownerChip(home.team, league) + ownerChip(away.team, league);
       const when = whenText({ev: entry.ev, comp: entry.comp, me: home});
       if (when.cls === 'live') liveIds.add(id);
       const nm = side => esc((side.team||{}).shortDisplayName || (side.team||{}).displayName || 'TBD');
@@ -341,8 +360,8 @@ function renderSlate(){
         sort: new Date(entry.ev.date).getTime(),
         pool: !!chips,
         html: '<div class="game ' + when.cls + (chips ? '' : ' nopick') + '">' +
-          '<span class="mu">' + rankOf(away) + '<b>' + nm(away) + '</b>' + ownerChip(away.team) +
-            ' <span style="color:var(--dim)">at</span> ' + rankOf(home) + '<b>' + nm(home) + '</b>' + ownerChip(home.team) + '</span>' +
+          '<span class="mu">' + rankOf(away) + '<b>' + nm(away) + '</b>' + ownerChip(away.team, league) +
+            ' <span style="color:var(--dim)">at</span> ' + rankOf(home) + '<b>' + nm(home) + '</b>' + ownerChip(home.team, league) + '</span>' +
           '<span class="when">' + when.html + '</span>' +
           '<span class="line">' + lineText({comp: entry.comp, me: home}, true) + '</span>' +
         '</div>'
@@ -351,6 +370,8 @@ function renderSlate(){
   }
   rows.sort((a,b) => a.sort - b.sort);
   const shown = rows.filter(r => !poolOnly || r.pool);
+  if (rows.length && !rows.some(r => r.pool))
+    setStatus('No team on the board matched the roster — tell Claude, and mention build ' + BUILD + '.', true);
 
   document.getElementById('slate').innerHTML =
     '<div class="filter"><label><input type="checkbox" id="poolOnly"' + (poolOnly ? ' checked' : '') +
@@ -365,24 +386,78 @@ function renderSlate(){
   return liveIds.size;
 }
 
+function weekLabel(){
+  if (!shown['nfl'] && !shown['college-football']) return 'This week';
+  if (offset === 0) return 'This week';
+  return offset < 0 ? Math.abs(offset) + (offset === -1 ? ' week back' : ' weeks back')
+                    : offset + (offset === 1 ? ' week ahead' : ' weeks ahead');
+}
+function renderWeekBar(){
+  const cfb = shown['college-football'], nfl = shown['nfl'];
+  const atStart = (cfb || 1) <= 1 && (nfl || 1) <= 1;
+  const atEnd = (cfb || 1) >= MAX_WEEK['college-football'] && (nfl || 1) >= MAX_WEEK['nfl'];
+  document.getElementById('weekbar').innerHTML =
+    '<button class="arrow" id="prevWk"' + (atStart ? ' disabled' : '') + '>&larr;</button>' +
+    '<div><div class="lbl">' + weekLabel() + '</div>' +
+    '<div class="sub">College wk ' + (cfb || '—') + ' &nbsp;·&nbsp; NFL wk ' + (nfl || '—') + '</div></div>' +
+    '<button class="arrow" id="nextWk"' + (atEnd ? ' disabled' : '') + '>&rarr;</button>' +
+    (offset !== 0 ? '<button class="now" id="nowWk">Back to this week</button>' : '');
+
+  const step = n => { offset += n; load(); };
+  const prev = document.getElementById('prevWk'), next = document.getElementById('nextWk');
+  if (!atStart) prev.addEventListener('click', () => step(-1));
+  if (!atEnd) next.addEventListener('click', () => step(1));
+  const now = document.getElementById('nowWk');
+  if (now) now.addEventListener('click', () => { offset = 0; load(); });
+}
+
 async function load(){
   try {
     if (!ROSTER){
       ROSTER = await (await fetch('teams.json')).json();
       for (const t of ROSTER.teams){ OWNER_OF[norm(t.espn)] = t.owner; OWNER_OF[norm(t.label)] = t.owner; }
+      try {
+        const st = await (await fetch('standings.json?t=' + Date.now())).json();
+        if (st && st.espnIds)
+          for (const t of ROSTER.teams){
+            const id = st.espnIds[t.label];
+            if (id) OWNER_BY_ID[t.league + ':' + id] = t.owner;
+          }
+      } catch (e) { /* ids are a bonus; names still work */ }
     }
-    const [nfl, cfb] = await Promise.all([grab(PATHS['nfl']), grab(PATHS['college-football'])]);
+    const want = league => {
+      if (!base[league]) return null;                       // first load: let ESPN pick
+      const n = base[league] + offset;
+      return Math.min(MAX_WEEK[league], Math.max(1, n));
+    };
+    const [nfl, cfb] = await Promise.all([
+      grab(pathFor('nfl', want('nfl'))),
+      grab(pathFor('college-football', want('college-football')))
+    ]);
+
+    for (const lg of ['nfl','college-football']){
+      const raw = base[lg] ? base[lg] + offset : null;
+      clamped[lg] = raw == null ? 0 : (raw > MAX_WEEK[lg] ? 1 : (raw < 1 ? -1 : 0));
+    }
+    const weekOf = (json, league) => (json.week && json.week.number) || want(league) || 1;
+    if (!base['nfl']) base = {"nfl": weekOf(nfl, 'nfl'), "college-football": weekOf(cfb, 'college-football')};
+    shown = {"nfl": weekOf(nfl, 'nfl'), "college-football": weekOf(cfb, 'college-football')};
+
     GAMES = {"nfl": indexGames(nfl, 'nfl'), "college-football": indexGames(cfb, 'college-football')};
+    renderWeekBar();
     const live = render();
     const now = new Date().toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'});
-    setStatus(live ? live + ' game' + (live>1?'s':'') + ' in progress · refreshing every minute'
-                   : 'Read at ' + now + '. Open it again for the latest line.');
+    if (offset !== 0) setStatus('Showing college week ' + shown['college-football'] +
+                                ' and NFL week ' + shown['nfl'] + '. Regular season only.');
+    else setStatus(live ? live + ' game' + (live>1?'s':'') + ' in progress · refreshing every minute'
+                        : 'Read at ' + now + '. Open it again for the latest line.');
   } catch (err) {
     setStatus('Could not reach ESPN just now — try Refresh in a minute.', true);
     document.getElementById('slate').innerHTML = '<div class="empty">No schedule loaded.</div>';
   }
 }
 
+document.getElementById('build').textContent = BUILD;
 document.getElementById('btnRefresh').addEventListener('click', load);
 load();
 </script>

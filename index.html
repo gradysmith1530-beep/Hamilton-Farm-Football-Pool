@@ -182,7 +182,8 @@
 
   <div class="foot">
     <p><b>Updates on its own.</b> A job runs every morning, reads every team's record from ESPN, and republishes this page. Nobody has to touch it.</p>
-    <p><b>Scoring.</b> Every win by any of your 12 teams is one point — regular season, conference title games, bowls and playoffs.</p>
+    <p><b>Scoring.</b> Every regular season win by any of your 12 teams is one point. Bowl games, the college playoff, the NFL playoffs and conference title games do not count.</p>
+    <p style="opacity:.55"><b>Build</b> <span id="build"></span></p>
     <p><b>Washington.</b> Listed as the Redskins on the original board, tracked here as the Commanders.</p>
   </div>
 
@@ -257,6 +258,7 @@ function detailHTML(owner){
     }).join('') + '</div>').join('') + '</div>';
 }
 /* ---------- one team's full season ---------- */
+const BUILD = "2026-08-26e";
 const ESPN_HOSTS = [
   "https://site.api.espn.com/apis/site/v2/sports/football",
   "https://site.web.api.espn.com/apis/site/v2/sports/football"
@@ -277,14 +279,19 @@ async function teamId(label, league){
   if (DATA.espnIds && DATA.espnIds[label]) return DATA.espnIds[label];
   if (!idCache[league]){
     const list = await espnGet('/' + league + '/teams?limit=' + (league === 'nfl' ? 50 : 900));
+    const teams = (((list.sports || [])[0] || {}).leagues || [])[0];
     idCache[league] = {};
-    for (const g of list.sports[0].leagues[0].teams){
-      const t = g.team;
-      for (const k of [t.displayName, t.shortDisplayName, t.location, t.name, t.abbreviation])
+    for (const g of ((teams && teams.teams) || [])){
+      const t = g.team || {};
+      for (const k of [t.displayName, t.shortDisplayName, t.location, t.name, t.abbreviation, t.nickname])
         if (k) idCache[league][normName(k)] = t.id;
     }
   }
-  return idCache[league][normName(label)] || null;
+  const entry = DATA.roster.find(r => r.label === label) || {};
+  const full = (DATA.espnNames && DATA.espnNames[label]) || '';
+  return idCache[league][normName(label)] ||
+         (full && idCache[league][normName(full)]) ||
+         idCache[league][normName(entry.label)] || null;
 }
 function scoreOf(side){
   const s = side && side.score;
@@ -353,7 +360,9 @@ async function showSchedule(label){
       : '<div class="empty">ESPN has not posted this schedule yet.</div>';
   } catch (err) {
     const box = wrap.querySelector('#sched');
-    if (box) box.innerHTML = '<div class="empty">Could not load the schedule right now.</div>';
+    if (box) box.innerHTML = '<div class="empty">Could not load this schedule.<br>' +
+      '<span style="font-size:11px;opacity:.75">' + esc(String(err && err.message || err)) +
+      ' · build ' + BUILD + '</span></div>';
   }
 }
 
@@ -448,6 +457,7 @@ function copyText(){
     .catch(() => setStatus('Copy blocked by the browser — a screenshot works too.', true));
 }
 
+document.getElementById('build').textContent = BUILD;
 document.getElementById('btnCopy').addEventListener('click', () => DATA && copyText());
 document.getElementById('btnPrint').addEventListener('click', () => window.print());
 

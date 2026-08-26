@@ -1,5 +1,6 @@
 """
-HF Football pool — reads every team's record from ESPN and writes standings.json.
+HF Football pool — reads every team's REGULAR SEASON record from ESPN and writes
+standings.json. Bowl games, the college football playoff and the NFL playoffs do not count.
 
 Runs by itself once a day on GitHub. To try it on your own computer:  python update.py
 """
@@ -64,6 +65,72 @@ def overall_record(team):
         if rec:
             return rec
     return None
+
+
+def score_value(side):
+    """ESPN sends a score as a plain string in some feeds and an object in others."""
+    raw = (side or {}).get("score")
+    if isinstance(raw, dict):
+        raw = raw.get("value", raw.get("displayValue"))
+    try:
+        return int(float(raw))
+    except (TypeError, ValueError):
+        return None
+
+
+CHAMPIONSHIP_WORDS = ("championship", "champ game", "title game")
+
+
+def is_championship(event, comp):
+    """Conference title games are filed as regular season by ESPN. They do not count."""
+    blobs = [event.get("name", ""), event.get("shortName", "")]
+    for note in (comp.get("notes") or []):
+        blobs.append(note.get("headline", ""))
+    text = " ".join(blobs).lower()
+    if "championship subdivision" in text:  # that's just FCS in a team's name
+        text = text.replace("championship subdivision", "")
+    return any(word in text for word in CHAMPIONSHIP_WORDS)
+
+
+def regular_season_record(league, team_id):
+    """Walk one team's schedule and count only finished REGULAR SEASON games.
+
+    Bowl games, the college playoff and the NFL playoffs are season type 3 and are
+    skipped. NFL preseason is season type 1 and is skipped too. Conference championship
+    games sit inside season type 2, so they are caught by name and skipped as well.
+    """
+    data = get_json("/%s/teams/%s/schedule?seasontype=2" % (league, team_id))
+    wins = losses = ties = 0
+    for event in data.get("events", []):
+        kind = event.get("seasonType") or {}
+        stype = str(kind.get("type", kind.get("id", 2)))
+        if stype != "2":
+            continue
+
+        comp = (event.get("competitions") or [{}])[0]
+        if is_championship(event, comp):
+            continue
+
+        status = (comp.get("status") or {}).get("type") or {}
+        if not status.get("completed"):
+            continue
+
+        sides = comp.get("competitors") or []
+        mine = next((s for s in sides if str((s.get("team") or {}).get("id")) == str(team_id)), None)
+        theirs = next((s for s in sides if s is not mine), None)
+        if not mine or not theirs:
+            continue
+
+        ours, hers = score_value(mine), score_value(theirs)
+        if ours is None or hers is None:
+            continue
+        if ours > hers:
+            wins += 1
+        elif ours < hers:
+            losses += 1
+        else:
+            ties += 1
+    return wins, losses, ties
 
 
 def load_league(league, limit):
@@ -136,21 +203,21 @@ def main():
         if found.get("id"):
             espn_ids[entry["label"]] = str(found["id"])
 
-        rec = overall_record(found)
-        if rec is None:  # the team list left the record out — ask for that one team
+        rec = None
+        if found.get("id"):
             try:
-                rec = overall_record(fetch_one(league, found.get("id")))
-            except Exception as err:  # noqa: BLE001
-                print("  could not read %s: %s" % (entry["label"], err))
-        if rec is None:
-            rec = (0, 0, 0)
+                rec = regular_season_record(league, found["id"])
+            except Exception as err:  # noqa: BLE001 — fall back to the posted record
+                print("  schedule unavailable for %s (%s)" % (entry["label"], err))
+        if rec is None:  # last resort: ESPN's posted record, which does include bowls
+            rec = overall_record(found) or (0, 0, 0)
             no_record.append(entry["label"])
         results[entry["label"]] = {"w": rec[0], "l": rec[1], "t": rec[2]}
 
     if unmatched:
         print("\nNot found on ESPN (fix the 'espn' name in teams.json): %s" % ", ".join(unmatched))
     if no_record:
-        print("No record posted yet for: %s" % ", ".join(no_record))
+        print("Fell back to the posted record (may include bowls) for: %s" % ", ".join(no_record))
 
     totals = {owner: 0 for owner in roster["owners"]}
     losses = {owner: 0 for owner in roster["owners"]}
