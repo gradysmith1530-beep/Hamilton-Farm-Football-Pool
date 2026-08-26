@@ -204,7 +204,7 @@ const pathFor = (league, week) => (league === 'nfl'
     : '/college-football/scoreboard?groups=80&limit=300&seasontype=2')
   + (week ? '&week=' + week : '');
 
-const BUILD = "2026-08-26e";
+const BUILD = "2026-08-26f";
 let ROSTER = null, GAMES = {}, OWNER_OF = {}, OWNER_BY_ID = {}, chipHits = 0;
 let view = "all", timer = null, poolOnly = true;
 let base = {}, offset = 0, shown = {}, clamped = {};   // base = this week's numbers; offset = how far we've paged
@@ -255,7 +255,8 @@ function opponentOf(entry){
 function whenText(entry){
   const st = entry.ev.status || entry.comp.status || {};
   const type = (st.type || {});
-  const mine = Number(entry.me.score), theirs = Number(opponentOf(entry).score);
+  const sc = s => (s && typeof s === 'object') ? Number(s.value != null ? s.value : s.displayValue) : Number(s);
+  const mine = sc(entry.me.score), theirs = sc(opponentOf(entry).score);
   if (type.state === "in") return {cls:"live", html: esc(type.shortDetail || "Live") + ' &nbsp;<b>' + mine + '–' + theirs + '</b>'};
   if (type.state === "post"){
     const won = mine > theirs;
@@ -289,7 +290,7 @@ function rankOf(side){
 
 function render(){
   document.getElementById('tabs').innerHTML =
-    ['all','slate'].concat(ROSTER.owners).map(o =>
+    ['all'].concat(offline ? [] : ['slate']).concat(ROSTER.owners).map(o =>
       '<button class="' + (view===o?'on':'') + '" data-o="' + esc(o) + '">' +
       (o==='all' ? 'By owner' : o==='slate' ? 'Full slate' : esc(o)) + '</button>'
     ).join('');
@@ -386,6 +387,51 @@ function renderSlate(){
   return liveIds.size;
 }
 
+/* When the browser can't reach ESPN (ad blocker, work wifi), fall back to the
+   schedule the daily job saved into the repo. No live scores, but the week still shows. */
+let saved = null, offline = false;
+
+async function loadSaved(){
+  if (saved !== null) return saved;
+  try { saved = await (await fetch('schedules.json?t=' + Date.now())).json(); }
+  catch (e) { saved = false; }
+  return saved;
+}
+function savedBaseWeek(league){
+  const now = Date.now();
+  let best = null, gap = Infinity;
+  for (const t of ROSTER.teams){
+    if (t.league !== league) continue;
+    for (const r of ((saved.teams || {})[t.label] || [])){
+      if (!r.counts || !r.wk) continue;
+      const d = Math.abs(new Date(r.date).getTime() - now);
+      if (d < gap){ gap = d; best = r.wk; }
+    }
+  }
+  return best || 1;
+}
+function savedGames(league, week){
+  const out = {};
+  for (const t of ROSTER.teams){
+    if (t.league !== league) continue;
+    for (const r of ((saved.teams || {})[t.label] || [])){
+      if (r.wk !== week || !r.counts) continue;
+      const odds = (saved.odds || {})[r.id];
+      const me   = {team: {displayName: t.espn, shortDisplayName: t.label, id: 'me'},
+                    score: r.us, homeAway: r.home ? 'home' : 'away'};
+      const them = {team: {displayName: r.opp, shortDisplayName: r.opp, id: r.oppId || 'them'},
+                    score: r.them};
+      const comp = {competitors: [me, them],
+                    odds: odds ? [{details: odds.d, overUnder: odds.ou}] : undefined,
+                    status: {type: {state: r.state, shortDetail: r.detail}}};
+      const ev = {id: r.id, date: r.date, status: comp.status, competitions: [comp]};
+      out[norm(t.label)] = {ev, comp, me, league};
+      out[norm(t.espn)]  = {ev, comp, me, league};
+    }
+  }
+  return out;
+}
+
 function weekLabel(){
   if (!shown['nfl'] && !shown['college-football']) return 'This week';
   if (offset === 0) return 'This week';
@@ -430,10 +476,15 @@ async function load(){
       const n = base[league] + offset;
       return Math.min(MAX_WEEK[league], Math.max(1, n));
     };
-    const [nfl, cfb] = await Promise.all([
-      grab(pathFor('nfl', want('nfl'))),
-      grab(pathFor('college-football', want('college-football')))
-    ]);
+    const board = async league => {
+      let json = await grab(pathFor(league, want(league)));
+      const s = json.season || {};
+      const stype = (s.type && s.type.type != null) ? s.type.type : s.type;
+      if (stype != null && String(stype) !== '2')      // ESPN handed back preseason — ask again
+        json = await grab(pathFor(league, 1));
+      return json;
+    };
+    const [nfl, cfb] = await Promise.all([board('nfl'), board('college-football')]);
 
     for (const lg of ['nfl','college-football']){
       const raw = base[lg] ? base[lg] + offset : null;
@@ -452,8 +503,28 @@ async function load(){
     else setStatus(live ? live + ' game' + (live>1?'s':'') + ' in progress · refreshing every minute'
                         : 'Read at ' + now + '. Open it again for the latest line.');
   } catch (err) {
-    setStatus('Could not reach ESPN just now — try Refresh in a minute.', true);
-    document.getElementById('slate').innerHTML = '<div class="empty">No schedule loaded.</div>';
+    await loadSaved();
+    if (saved && saved.teams){
+      offline = true;
+      if (!base['nfl']) base = {"nfl": savedBaseWeek('nfl'), "college-football": savedBaseWeek('college-football')};
+      const pick = lg => Math.min(MAX_WEEK[lg], Math.max(1, base[lg] + offset));
+      for (const lg of ['nfl','college-football']){
+        const raw = base[lg] + offset;
+        clamped[lg] = raw > MAX_WEEK[lg] ? 1 : (raw < 1 ? -1 : 0);
+      }
+      shown = {"nfl": pick('nfl'), "college-football": pick('college-football')};
+      GAMES = {"nfl": savedGames('nfl', shown['nfl']),
+               "college-football": savedGames('college-football', shown['college-football'])};
+      if (view === 'slate') view = 'all';     // the saved file only holds our own teams
+      renderWeekBar();
+      render();
+      setStatus('Your browser can\'t reach ESPN (ad blocker or network filter), so this is the ' +
+                'schedule saved ' + new Date(saved.updated).toLocaleDateString(undefined,{month:'short',day:'numeric'}) +
+                '. No live scores, and the full slate tab needs the live feed.', true);
+    } else {
+      setStatus('Could not reach ESPN, and no saved schedule was found. Run the update job once.', true);
+      document.getElementById('slate').innerHTML = '<div class="empty">No schedule loaded.</div>';
+    }
   }
 }
 

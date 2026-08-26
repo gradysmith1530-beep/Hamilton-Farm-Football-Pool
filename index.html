@@ -109,6 +109,10 @@
   .sgame.live{background:rgba(67,176,114,.08)}
   .sgame.live .rs{color:var(--turf)}
   .sgame.bye{opacity:.45}
+  .chipx{font-family:var(--mono);font-size:9px;letter-spacing:.06em;text-transform:uppercase;
+         border:1px solid var(--line);border-radius:2px;padding:1px 4px;color:var(--dim);white-space:nowrap}
+  .asof{font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--dim);
+        text-transform:uppercase;padding-top:10px}
   .chartbox{border:1px solid var(--line);border-radius:2px;padding:14px 10px 8px;overflow:hidden}
   .chartbox svg{width:100%;height:auto;display:block}
   .chartbox .gridline{stroke:var(--line);stroke-width:1}
@@ -258,14 +262,44 @@ function detailHTML(owner){
     }).join('') + '</div>').join('') + '</div>';
 }
 /* ---------- one team's full season ---------- */
-const BUILD = "2026-08-26e";
+const BUILD = "2026-08-26f";
 const ESPN_HOSTS = [
   "https://site.api.espn.com/apis/site/v2/sports/football",
   "https://site.web.api.espn.com/apis/site/v2/sports/football"
 ];
 const LEAGUE_OF = g => (g === 'NFC' || g === 'AFC') ? 'nfl' : 'college-football';
 const normName = s => String(s||'').toLowerCase().replace(/[^a-z0-9]/g,'');
-let idCache = {};
+let idCache = {}, schedFile = null;
+
+async function localSchedules(){
+  if (schedFile !== null) return schedFile;
+  try { schedFile = await (await fetch('schedules.json?t=' + Date.now())).json(); }
+  catch (e) { schedFile = false; }
+  return schedFile;
+}
+function localRows(label){
+  const f = schedFile;
+  if (!f || !f.teams || !f.teams[label]) return null;
+  return f.teams[label].slice().sort((a,b) => new Date(a.date) - new Date(b.date)).map(r => {
+    const d = new Date(r.date);
+    const when = d.toLocaleDateString(undefined,{month:'short',day:'numeric'});
+    let cls = '', rs;
+    if (r.state === 'post' && r.us != null && r.them != null){
+      cls = r.us > r.them ? 'w' : (r.us === r.them ? '' : 'l');
+      rs = '<b>' + (r.us > r.them ? 'W' : (r.us === r.them ? 'T' : 'L')) + ' ' + r.us + '–' + r.them + '</b>';
+    } else if (r.state === 'in'){
+      cls = 'live';
+      rs = esc(r.detail || 'live') + ' <b>' + r.us + '–' + r.them + '</b>';
+    } else {
+      rs = esc(d.toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'}));
+    }
+    if (!r.counts) cls += ' bye';
+    return '<div class="sgame ' + cls + '"><span class="dt">' + esc(when) + '</span>' +
+      '<span class="op">' + (r.home ? 'vs ' : 'at ') + '<b>' + esc(r.opp) + '</b>' +
+      (r.counts ? '' : ' <span class="chipx">' + esc(r.why) + ' · no points</span>') + '</span>' +
+      '<span class="rs">' + rs + '</span></div>';
+  }).join('');
+}
 
 async function espnGet(path){
   let last;
@@ -348,19 +382,26 @@ async function showSchedule(label){
   wrap.querySelector('.x').addEventListener('click', closeSheet);
   document.addEventListener('keydown', escClose);
 
+  const box = () => wrap.querySelector('#sched');
+
+  // 1. the copy the daily job saved into the repo — always reachable
+  await localSchedules();
+  const saved = localRows(label);
+  if (saved && box()){
+    box().innerHTML = saved +
+      '<div class="asof">as of ' + esc(stamp(schedFile.updated)) + '</div>';
+  }
+
+  // 2. then try ESPN for a live version, and quietly keep the saved one if it's blocked
   try {
     const league = LEAGUE_OF(entry.group);
     const id = await teamId(label, league);
     if (!id) throw new Error('no id');
     const data = await espnGet('/' + league + '/teams/' + id + '/schedule');
     const events = (data.events || []).slice().sort((a,b) => new Date(a.date) - new Date(b.date));
-    const box = wrap.querySelector('#sched');
-    box.innerHTML = events.length
-      ? events.map(ev => gameRow(ev, label, id)).join('')
-      : '<div class="empty">ESPN has not posted this schedule yet.</div>';
+    if (events.length && box()) box().innerHTML = events.map(ev => gameRow(ev, label, id)).join('');
   } catch (err) {
-    const box = wrap.querySelector('#sched');
-    if (box) box.innerHTML = '<div class="empty">Could not load this schedule.<br>' +
+    if (!saved && box()) box().innerHTML = '<div class="empty">Could not load this schedule.<br>' +
       '<span style="font-size:11px;opacity:.75">' + esc(String(err && err.message || err)) +
       ' · build ' + BUILD + '</span></div>';
   }

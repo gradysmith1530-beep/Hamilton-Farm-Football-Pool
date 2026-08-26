@@ -92,28 +92,20 @@ def is_championship(event, comp):
     return any(word in text for word in CHAMPIONSHIP_WORDS)
 
 
-def regular_season_record(league, team_id):
-    """Walk one team's schedule and count only finished REGULAR SEASON games.
+def team_games(league, team_id):
+    """Every game on a team's card, with a flag for whether it counts in the pool.
 
-    Bowl games, the college playoff and the NFL playoffs are season type 3 and are
-    skipped. NFL preseason is season type 1 and is skipped too. Conference championship
-    games sit inside season type 2, so they are caught by name and skipped as well.
+    Counting games are season type 2 (regular season) and not a conference title game.
+    Preseason (type 1), bowls, the college playoff and the NFL playoffs (type 3) are
+    kept in the list so the site can show a full season, but they do not count.
     """
-    data = get_json("/%s/teams/%s/schedule?seasontype=2" % (league, team_id))
-    wins = losses = ties = 0
+    data = get_json("/%s/teams/%s/schedule" % (league, team_id))
+    rows = []
     for event in data.get("events", []):
+        comp = (event.get("competitions") or [{}])[0]
         kind = event.get("seasonType") or {}
         stype = str(kind.get("type", kind.get("id", 2)))
-        if stype != "2":
-            continue
-
-        comp = (event.get("competitions") or [{}])[0]
-        if is_championship(event, comp):
-            continue
-
-        status = (comp.get("status") or {}).get("type") or {}
-        if not status.get("completed"):
-            continue
+        title = is_championship(event, comp)
 
         sides = comp.get("competitors") or []
         mine = next((s for s in sides if str((s.get("team") or {}).get("id")) == str(team_id)), None)
@@ -121,16 +113,64 @@ def regular_season_record(league, team_id):
         if not mine or not theirs:
             continue
 
-        ours, hers = score_value(mine), score_value(theirs)
-        if ours is None or hers is None:
+        status = (comp.get("status") or {}).get("type") or {}
+        state = status.get("state", "pre")
+        opp = theirs.get("team") or {}
+        rows.append({
+            "id": str(event.get("id", "")),
+            "wk": (event.get("week") or {}).get("number"),
+            "date": event.get("date", ""),
+            "opp": opp.get("shortDisplayName") or opp.get("displayName") or "TBD",
+            "oppId": str(opp.get("id", "")),
+            "home": mine.get("homeAway") == "home",
+            "state": state,
+            "detail": status.get("shortDetail", ""),
+            "us": score_value(mine),
+            "them": score_value(theirs),
+            "counts": stype == "2" and not title,
+            "why": "title game" if title else ("preseason" if stype == "1" else
+                   ("postseason" if stype == "3" else "")),
+        })
+    return rows
+
+
+def record_from(rows):
+    wins = losses = ties = 0
+    for row in rows:
+        if not row["counts"] or row["state"] != "post":
             continue
-        if ours > hers:
+        ours, theirs = row["us"], row["them"]
+        if ours is None or theirs is None:
+            continue
+        if ours > theirs:
             wins += 1
-        elif ours < hers:
+        elif ours < theirs:
             losses += 1
         else:
             ties += 1
     return wins, losses, ties
+
+
+def current_odds():
+    """One snapshot of this week's posted lines, so the site still shows a number
+    even when a phone or laptop can't reach ESPN directly."""
+    out = {}
+    for path in ("/nfl/scoreboard?seasontype=2",
+                 "/college-football/scoreboard?groups=80&limit=300&seasontype=2"):
+        try:
+            data = get_json(path)
+        except Exception as err:  # noqa: BLE001
+            print("  no odds from %s (%s)" % (path.split("/")[1], err))
+            continue
+        for event in data.get("events", []):
+            comp = (event.get("competitions") or [{}])[0]
+            odds = (comp.get("odds") or [{}])[0]
+            if odds.get("details") or odds.get("overUnder") is not None:
+                out[str(event.get("id", ""))] = {
+                    "d": odds.get("details"),
+                    "ou": odds.get("overUnder"),
+                }
+    return out
 
 
 def load_league(league, limit):
@@ -191,24 +231,27 @@ def main():
 
     lookup = {league: index_teams(teams) for league, teams in espn.items()}
 
-    results, unmatched, no_record, espn_ids = {}, [], [], {}
+    results, unmatched, no_record, espn_ids, schedules = {}, [], [], {}, {}
     for entry in roster["teams"]:
         league = entry["league"]
         found = lookup[league].get(norm(entry["espn"])) or lookup[league].get(norm(entry["label"]))
         if not found:
             unmatched.append(entry["label"])
             results[entry["label"]] = {"w": 0, "l": 0, "t": 0}
+            schedules[entry["label"]] = []
             continue
 
         if found.get("id"):
             espn_ids[entry["label"]] = str(found["id"])
 
-        rec = None
+        rec, rows = None, []
         if found.get("id"):
             try:
-                rec = regular_season_record(league, found["id"])
+                rows = team_games(league, found["id"])
+                rec = record_from(rows)
             except Exception as err:  # noqa: BLE001 — fall back to the posted record
                 print("  schedule unavailable for %s (%s)" % (entry["label"], err))
+        schedules[entry["label"]] = rows
         if rec is None:  # last resort: ESPN's posted record, which does include bowls
             rec = overall_record(found) or (0, 0, 0)
             no_record.append(entry["label"])
@@ -271,10 +314,19 @@ def main():
     with open(path, "w", encoding="utf-8") as fh:
         json.dump(payload, fh, indent=1)
 
+    with open(os.path.join(HERE, "schedules.json"), "w", encoding="utf-8") as fh:
+        json.dump({
+            "updated": payload["updated"],
+            "leagues": {e["label"]: e["league"] for e in roster["teams"]},
+            "owners": {e["label"]: e["owner"] for e in roster["teams"]},
+            "teams": schedules,
+            "odds": current_odds(),
+        }, fh, separators=(",", ":"))
+
     print("\nWeek %d standings:" % week)
     for owner in sorted(totals, key=lambda o: -totals[o]):
         print("  %-11s %3d wins  (%+d this week)" % (owner, totals[owner], gained[owner]))
-    print("\nWrote standings.json")
+    print("\nWrote standings.json and schedules.json")
 
     if unmatched:
         sys.exit(0)  # still publish — just leave the warning in the log
