@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HF Football — This week</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B1015; --panel:#141C24; --panel2:#0F161D; --line:#22303C;
+    --chalk:#EAF0F2; --dim:#8195A3; --amber:#FFB020; --flag:#E2574C; --turf:#43B072;
+    --disp:'Barlow Condensed',Impact,'Haettenschweiler',sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+    --body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  }
+  *{box-sizing:border-box}
+  .hf{background:var(--ink);color:var(--chalk);font-family:var(--body);padding:0 0 48px;margin:0;line-height:1.45;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* header */
+  .top{border-bottom:1px solid var(--line);padding:26px 0 20px;margin-bottom:26px}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
+  .titlerow{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-top:6px}
+  h1{font-family:var(--disp);font-weight:700;font-size:clamp(38px,7vw,68px);line-height:.9;letter-spacing:.02em;text-transform:uppercase;margin:0}
+  h1 span{color:var(--amber)}
+  .ctl{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  button{font-family:var(--body);font-size:13px;font-weight:600;color:var(--chalk);background:transparent;border:1px solid var(--line);border-radius:2px;padding:9px 14px;cursor:pointer;transition:border-color .15s,color .15s,background .15s}
+  button:hover{border-color:var(--amber);color:var(--amber)}
+  button:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+  button.primary{background:var(--amber);border-color:var(--amber);color:#0B1015}
+  button.primary:hover{background:#ffc14d;border-color:#ffc14d;color:#0B1015}
+  button[disabled]{opacity:.45;cursor:default}
+  .status{font-family:var(--mono);font-size:11px;color:var(--dim);margin-top:12px;min-height:16px;letter-spacing:.02em}
+  .status b{color:var(--chalk);font-weight:500}
+  .status .err{color:var(--flag)}
+
+  /* standings */
+  .sechead{display:flex;align-items:baseline;gap:12px;margin:0 0 12px}
+  .sechead h2{font-family:var(--disp);text-transform:uppercase;letter-spacing:.06em;font-size:20px;font-weight:600;margin:0}
+  .sechead .note{font-family:var(--mono);font-size:10.5px;color:var(--dim);letter-spacing:.08em;text-transform:uppercase}
+
+  .row{border-top:1px solid var(--line);padding:14px 0 13px;cursor:pointer}
+  .row:last-of-type{border-bottom:1px solid var(--line)}
+  .row:hover{background:rgba(255,176,32,.035)}
+  .row.open{background:rgba(255,176,32,.05)}
+  .rmain{display:grid;grid-template-columns:34px minmax(120px,1fr) auto;gap:14px;align-items:center}
+  .rank{font-family:var(--mono);font-size:13px;color:var(--dim);text-align:right}
+  .row.lead .rank{color:var(--amber)}
+  .who{min-width:0}
+  .name{font-family:var(--disp);font-size:26px;font-weight:600;text-transform:uppercase;letter-spacing:.03em;line-height:1}
+  .sub{font-family:var(--mono);font-size:10.5px;color:var(--dim);margin-top:5px;letter-spacing:.05em}
+  .scorebox{display:flex;align-items:baseline;gap:10px;justify-self:end}
+  .wins{font-family:var(--mono);font-weight:700;font-size:32px;color:var(--amber);line-height:1;font-variant-numeric:tabular-nums}
+  .delta{font-family:var(--mono);font-size:12px;color:var(--turf);white-space:nowrap;min-width:34px;text-align:right}
+  .delta.zero{color:var(--dim)}
+  .tally{margin:10px 0 0 48px;display:flex;flex-wrap:wrap;gap:9px}
+  .grp{position:relative;display:flex;gap:3px;height:16px}
+  .grp i{display:block;width:2px;height:16px;background:var(--amber);opacity:.85;border-radius:1px}
+  .grp.five::after{content:"";position:absolute;left:-3px;right:-3px;top:50%;height:2px;background:var(--amber);opacity:.85;transform:rotate(-18deg);border-radius:1px}
+  .grp i.fresh{background:var(--turf);opacity:1}
+
+  /* expanded roster */
+  .detail{display:none;margin:14px 0 4px 48px;padding-top:12px;border-top:1px dashed var(--line)}
+  .row.open .detail{display:block}
+  .confs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px 18px}
+  .conf h4{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--dim);text-transform:uppercase;margin:0 0 6px;font-weight:500}
+  .team{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:3px 0;font-size:13px}
+  .team .tn{color:var(--chalk);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .team .rec{font-family:var(--mono);font-size:12px;color:var(--dim);cursor:text;padding:1px 4px;border:1px solid transparent;border-radius:2px;white-space:nowrap}
+  .team .rec:hover{border-color:var(--line)}
+  .team .rec b{color:var(--amber);font-weight:600}
+  .team .rec.manual::after{content:"·";color:var(--turf);margin-left:2px}
+  .team input{width:58px;font-family:var(--mono);font-size:12px;background:var(--panel);color:var(--chalk);border:1px solid var(--amber);border-radius:2px;padding:1px 4px}
+
+  /* week log */
+  .logwrap{overflow-x:auto;margin-top:6px;border:1px solid var(--line);border-radius:2px}
+  table{border-collapse:collapse;width:100%;font-family:var(--mono);font-size:12px}
+  th,td{padding:8px 10px;text-align:right;white-space:nowrap;border-bottom:1px solid var(--line)}
+  th:first-child,td:first-child{text-align:left;position:sticky;left:0;background:var(--panel2);font-family:var(--body);font-weight:600;font-size:12.5px}
+  thead th{color:var(--dim);font-weight:500;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;background:var(--panel2)}
+  tbody tr:last-child td{border-bottom:none}
+  td.tot{color:var(--amber);font-weight:600}
+  td.z{color:#3C4B57}
+
+  .empty{font-family:var(--mono);font-size:12px;color:var(--dim);padding:18px;border:1px dashed var(--line);border-radius:2px;text-align:center}
+
+  .foot{margin-top:34px;border-top:1px solid var(--line);padding-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+  .foot p{font-size:12.5px;color:var(--dim);margin:0}
+  .foot b{color:var(--chalk);font-weight:600}
+  .sw{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--dim);margin-top:10px}
+  .sw input{accent-color:var(--amber)}
+  section{margin-bottom:34px}
+
+  @media (max-width:560px){
+    .tally,.detail{margin-left:0}
+    .rmain{grid-template-columns:26px 1fr auto;gap:10px}
+    .name{font-size:22px}
+    .wins{font-size:26px}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+  @media print{
+    .hf{background:#fff;color:#111}
+    .ctl,.status,.sw{display:none}
+    h1 span,.wins,.team .rec b,.name{color:#111}
+    .grp i,.grp i.fresh,.grp.five::after{background:#111;opacity:1}
+    .rank,.sub,.conf h4,.sechead .note,.team .rec,.foot p,.delta{color:#555}
+    .row,.row:last-of-type,.detail,.logwrap,th,td{border-color:#ccc}
+    .row{background:none!important;page-break-inside:avoid}
+    .detail{display:block!important}
+    th:first-child,td:first-child,thead th{background:#fff;color:#333}
+    td.tot{color:#111}.td.z,td.z{color:#999}
+    .foot{grid-template-columns:1fr 1fr}
+  }
+
+  /* --- this week's games --- */
+  .tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+  .tabs button{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:7px 11px}
+  .tabs button.on{background:var(--chalk);border-color:var(--chalk);color:var(--ink)}
+  .ownerblock{margin-bottom:26px}
+  .ownerblock h3{font-family:var(--disp);font-size:22px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;
+                 margin:0 0 2px;display:flex;align-items:baseline;gap:10px}
+  .ownerblock h3 small{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--dim);text-transform:none}
+  .game{display:grid;grid-template-columns:112px 1fr 132px 118px;gap:12px;align-items:baseline;
+        padding:9px 0;border-top:1px solid var(--line);font-size:13px}
+  .game:last-child{border-bottom:1px solid var(--line)}
+  .game .tn{font-family:var(--disp);font-size:16px;letter-spacing:.03em;text-transform:uppercase;
+            white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .game .opp{color:var(--dim);min-width:0}
+  .game .opp b{color:var(--chalk);font-weight:500}
+  .game .opp .rk{font-family:var(--mono);font-size:10px;color:var(--amber);margin-right:3px}
+  .game .when{font-family:var(--mono);font-size:11.5px;color:var(--dim);white-space:nowrap}
+  .game .line{font-family:var(--mono);font-size:11.5px;color:var(--dim);text-align:right;white-space:nowrap}
+  .game .line b{color:var(--chalk);font-weight:500}
+  .game.live{background:rgba(67,176,114,.07)}
+  .game.live .when{color:var(--turf)}
+  .game.live .when::before{content:"●";margin-right:5px;font-size:9px;vertical-align:1px}
+  .game.won .when b{color:var(--amber)}
+  .game.lost .when b{color:var(--flag)}
+  .game.bye{opacity:.5}
+  .game.bye .opp{font-style:italic}
+  .nav{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+  .nav a{color:var(--dim);text-decoration:none;border-bottom:1px solid var(--line)}
+  .nav a:hover{color:var(--amber);border-color:var(--amber)}
+  @media (max-width:620px){
+    .game{grid-template-columns:1fr 1fr;gap:2px 10px}
+    .game .tn{grid-column:1}
+    .game .when{grid-column:2;text-align:right}
+    .game .opp{grid-column:1}
+    .game .line{grid-column:2}
+  }
+</style></head>
+<body class="hf">
+<div class="wrap">
+
+  <div class="top">
+    <div class="eyebrow nav"><a href="./">&larr; Standings</a></div>
+    <div class="titlerow">
+      <h1>This <span>Week</span></h1>
+      <div class="ctl">
+        <button id="btnRefresh">Refresh</button>
+      </div>
+    </div>
+    <div class="status" id="status">Loading this week's games…</div>
+  </div>
+
+  <div class="tabs" id="tabs"></div>
+  <div id="slate"><div class="empty">Reading the schedule…</div></div>
+
+  <div class="foot">
+    <p><b>Where this comes from.</b> ESPN's public scoreboard, read fresh every time you open the page. Scores and clocks update live during games; the page re-reads itself every minute while anything is in progress.</p>
+    <p><b>The line.</b> The spread is shown from your team's side — <b>-3.5</b> means your team is favored by three and a half. O/U is the total. These are ESPN's posted numbers, not a shopped best price.</p>
+    <p><b>Byes.</b> Any team with no game on the slate shows as off this week. In college that's an open date, in the NFL it's the bye.</p>
+  </div>
+
+</div>
+
+<script>
+const HOSTS = [
+  "https://site.api.espn.com/apis/site/v2/sports/football",
+  "https://site.web.api.espn.com/apis/site/v2/sports/football"
+];
+const PATHS = {
+  "nfl": "/nfl/scoreboard",
+  "college-football": "/college-football/scoreboard?groups=80&limit=300"
+};
+
+let ROSTER = null, GAMES = {}, view = "all", timer = null;
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const norm = s => String(s||"").toLowerCase().replace(/[^a-z0-9]/g,"");
+const setStatus = (t, err) => document.getElementById('status').innerHTML = err ? '<span class="err">'+t+'</span>' : t;
+
+async function grab(path){
+  let last;
+  for (const host of HOSTS){
+    try {
+      const r = await fetch(host + path);
+      if (r.ok) return await r.json();
+      last = r.status;
+    } catch (e) { last = e; }
+  }
+  throw new Error("ESPN did not answer (" + last + ")");
+}
+
+function indexGames(json, league){
+  const out = {};
+  for (const ev of (json.events || [])){
+    const comp = (ev.competitions || [])[0];
+    if (!comp) continue;
+    for (const side of (comp.competitors || [])){
+      const t = side.team || {};
+      const keys = [t.displayName, t.shortDisplayName, t.nickname, t.name, t.location, t.abbreviation, t.slug];
+      for (const k of keys) if (k) out[norm(k)] = {ev, comp, me: side, league};
+    }
+  }
+  return out;
+}
+
+function opponentOf(entry){
+  return (entry.comp.competitors || []).find(c => c !== entry.me) || {};
+}
+function whenText(entry){
+  const st = entry.ev.status || entry.comp.status || {};
+  const type = (st.type || {});
+  const mine = Number(entry.me.score), theirs = Number(opponentOf(entry).score);
+  if (type.state === "in") return {cls:"live", html: esc(type.shortDetail || "Live") + ' &nbsp;<b>' + mine + '–' + theirs + '</b>'};
+  if (type.state === "post"){
+    const won = mine > theirs;
+    return {cls: won ? "won" : (mine === theirs ? "" : "lost"),
+            html: '<b>' + (won ? "W" : (mine === theirs ? "T" : "L")) + ' ' + mine + '–' + theirs + '</b>'};
+  }
+  const d = new Date(entry.ev.date);
+  return {cls:"", html: esc(d.toLocaleDateString(undefined,{weekday:'short'}) + ' ' +
+                            d.toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'}))};
+}
+function lineText(entry){
+  const odds = (entry.comp.odds || [])[0];
+  if (!odds) return '<span style="opacity:.5">no line</span>';
+  let spread = "";
+  const abbr = norm((entry.me.team||{}).abbreviation);
+  if (odds.details){
+    const m = String(odds.details).match(/^([A-Z@]+)\s*([+-][\d.]+)/);
+    if (m && norm(m[1]) === abbr) spread = m[2];
+    else if (m) spread = (parseFloat(m[2]) > 0 ? "-" : "+") + Math.abs(parseFloat(m[2]));
+    else spread = odds.details;               // "EVEN" and friends
+  }
+  const ou = odds.overUnder != null ? " · O/U " + odds.overUnder : "";
+  return (spread ? "<b>" + esc(spread) + "</b>" : "—") + esc(ou);
+}
+function rankOf(side){
+  const r = side.curatedRank && side.curatedRank.current;
+  return (r && r <= 25) ? '<span class="rk">#' + r + '</span> ' : '';
+}
+
+function render(){
+  document.getElementById('tabs').innerHTML =
+    ['all'].concat(ROSTER.owners).map(o =>
+      '<button class="' + (view===o?'on':'') + '" data-o="' + esc(o) + '">' + (o==='all'?'Everyone':esc(o)) + '</button>'
+    ).join('');
+  document.querySelectorAll('.tabs button').forEach(b => b.addEventListener('click', () => {
+    view = b.dataset.o; render();
+  }));
+
+  const owners = view === 'all' ? ROSTER.owners : [view];
+  const liveIds = new Set();
+
+  document.getElementById('slate').innerHTML = owners.map(owner => {
+    const mine = ROSTER.teams.filter(t => t.owner === owner);
+    const rows = mine.map(t => {
+      const entry = GAMES[t.league] && (GAMES[t.league][norm(t.espn)] || GAMES[t.league][norm(t.label)]);
+      if (!entry) return {sort: 9e15, html:
+        '<div class="game bye"><span class="tn">' + esc(t.label) + '</span>' +
+        '<span class="opp">off this week</span><span class="when">—</span><span class="line">—</span></div>'};
+      const opp = opponentOf(entry);
+      const home = entry.me.homeAway === "home";
+      const when = whenText(entry);
+      if (when.cls === "live") liveIds.add(entry.ev.id || entry.ev.date + (entry.comp.competitors||[]).map(c=>norm((c.team||{}).displayName)).sort().join("-"));
+      return {sort: new Date(entry.ev.date).getTime(), html:
+        '<div class="game ' + when.cls + '">' +
+          '<span class="tn">' + esc(t.label) + '</span>' +
+          '<span class="opp">' + (home ? 'vs ' : 'at ') + rankOf(opp) +
+            '<b>' + esc((opp.team||{}).shortDisplayName || (opp.team||{}).displayName || 'TBD') + '</b></span>' +
+          '<span class="when">' + when.html + '</span>' +
+          '<span class="line">' + lineText(entry) + '</span>' +
+        '</div>'};
+    }).sort((a,b) => a.sort - b.sort);
+
+    const byes = rows.filter(r => r.sort === 9e15).length;
+    return '<div class="ownerblock"><h3>' + esc(owner) +
+           '<small>' + (12 - byes) + ' playing' + (byes ? ' · ' + byes + ' off' : '') + '</small></h3>' +
+           rows.map(r => r.html).join('') + '</div>';
+  }).join('');
+
+  clearInterval(timer);
+  if (liveIds.size) timer = setInterval(load, 60000);
+  return liveIds.size;
+}
+
+async function load(){
+  try {
+    if (!ROSTER){
+      ROSTER = await (await fetch('teams.json')).json();
+    }
+    const [nfl, cfb] = await Promise.all([grab(PATHS['nfl']), grab(PATHS['college-football'])]);
+    GAMES = {"nfl": indexGames(nfl, 'nfl'), "college-football": indexGames(cfb, 'college-football')};
+    const live = render();
+    const now = new Date().toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'});
+    setStatus(live ? live + ' game' + (live>1?'s':'') + ' in progress · refreshing every minute'
+                   : 'Read at ' + now + '. Open it again for the latest line.');
+  } catch (err) {
+    setStatus('Could not reach ESPN just now — try Refresh in a minute.', true);
+    document.getElementById('slate').innerHTML = '<div class="empty">No schedule loaded.</div>';
+  }
+}
+
+document.getElementById('btnRefresh').addEventListener('click', load);
+load();
+</script>
+</body></html>
