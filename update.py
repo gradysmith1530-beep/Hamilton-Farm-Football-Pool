@@ -124,7 +124,7 @@ def main():
 
     lookup = {league: index_teams(teams) for league, teams in espn.items()}
 
-    results, unmatched, no_record = {}, [], []
+    results, unmatched, no_record, espn_ids = {}, [], [], {}
     for entry in roster["teams"]:
         league = entry["league"]
         found = lookup[league].get(norm(entry["espn"])) or lookup[league].get(norm(entry["label"]))
@@ -132,6 +132,9 @@ def main():
             unmatched.append(entry["label"])
             results[entry["label"]] = {"w": 0, "l": 0, "t": 0}
             continue
+
+        if found.get("id"):
+            espn_ids[entry["label"]] = str(found["id"])
 
         rec = overall_record(found)
         if rec is None:  # the team list left the record out — ask for that one team
@@ -193,6 +196,7 @@ def main():
         "roster": [
             {"label": e["label"], "owner": e["owner"], "group": e["group"]} for e in roster["teams"]
         ],
+        "espnIds": espn_ids,
         "weeks": history,
         "problems": {"unmatched": unmatched, "noRecord": no_record},
     }

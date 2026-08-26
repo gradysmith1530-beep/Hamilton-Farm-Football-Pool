@@ -85,6 +85,30 @@
   .nav{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
   .nav a{color:var(--amber);text-decoration:none;border-bottom:1px solid rgba(255,176,32,.4)}
   .nav a:hover{border-color:var(--amber)}
+  .team .tn{cursor:pointer;border-bottom:1px solid transparent}
+  .team:hover .tn{border-bottom-color:var(--line)}
+  .modal{position:fixed;inset:0;background:rgba(5,9,13,.82);z-index:60;display:flex;
+         align-items:flex-start;justify-content:center;padding:5vh 14px 14px;overflow:auto}
+  .sheet{background:var(--panel2);border:1px solid var(--line);border-radius:2px;width:100%;max-width:620px;
+         padding:20px 20px 16px;position:relative}
+  .sheet .x{position:absolute;top:12px;right:12px;font-size:18px;line-height:1;padding:4px 9px}
+  .sheet h3{font-family:var(--disp);font-size:30px;font-weight:600;text-transform:uppercase;letter-spacing:.03em;
+            margin:0;line-height:1;padding-right:40px}
+  .sheet .meta{font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:.06em;margin:7px 0 16px}
+  .sheet .meta b{color:var(--amber);font-weight:600}
+  .sgame{display:grid;grid-template-columns:64px 1fr 96px;gap:10px;align-items:baseline;
+         padding:8px 0;border-top:1px solid var(--line);font-size:13px}
+  .sgame:last-child{border-bottom:1px solid var(--line)}
+  .sgame .dt{font-family:var(--mono);font-size:11px;color:var(--dim);white-space:nowrap}
+  .sgame .op{min-width:0}
+  .sgame .op b{font-weight:500}
+  .sgame .rs{font-family:var(--mono);font-size:12px;text-align:right;color:var(--dim);white-space:nowrap}
+  .sgame .rs b{font-weight:600}
+  .sgame.w .rs b{color:var(--amber)}
+  .sgame.l .rs b{color:var(--flag)}
+  .sgame.live{background:rgba(67,176,114,.08)}
+  .sgame.live .rs{color:var(--turf)}
+  .sgame.bye{opacity:.45}
   .chartbox{border:1px solid var(--line);border-radius:2px;padding:14px 10px 8px;overflow:hidden}
   .chartbox svg{width:100%;height:auto;display:block}
   .chartbox .gridline{stroke:var(--line);stroke-width:1}
@@ -211,9 +235,14 @@ function render(){
     '</div>';
   }).join('');
 
-  document.querySelectorAll('.row').forEach(el => el.addEventListener('click', () => {
+  document.querySelectorAll('.row').forEach(el => el.addEventListener('click', ev => {
+    if (ev.target.closest('.tn[data-team]')) return;
     openOwner = openOwner === el.dataset.owner ? null : el.dataset.owner;
     render();
+  }));
+  document.querySelectorAll('.tn[data-team]').forEach(el => el.addEventListener('click', ev => {
+    ev.stopPropagation();
+    showSchedule(el.dataset.team);
   }));
   renderChart();
   renderLog();
@@ -223,10 +252,111 @@ function detailHTML(owner){
   return '<div class="confs">' + DATA.groups.map(g =>
     '<div class="conf"><h4>'+g+'</h4>' + mine.filter(t => t.group === g).map(t => {
       const r = DATA.records[t.label] || {w:0,l:0,t:0};
-      return '<div class="team"><span class="tn">'+esc(t.label)+'</span>'+
+      return '<div class="team"><span class="tn" data-team="'+esc(t.label)+'" title="Full schedule">'+esc(t.label)+'</span>'+
              '<span class="rec"><b>'+r.w+'</b>–'+r.l+(r.t?'–'+r.t:'')+'</span></div>';
     }).join('') + '</div>').join('') + '</div>';
 }
+/* ---------- one team's full season ---------- */
+const ESPN_HOSTS = [
+  "https://site.api.espn.com/apis/site/v2/sports/football",
+  "https://site.web.api.espn.com/apis/site/v2/sports/football"
+];
+const LEAGUE_OF = g => (g === 'NFC' || g === 'AFC') ? 'nfl' : 'college-football';
+const normName = s => String(s||'').toLowerCase().replace(/[^a-z0-9]/g,'');
+let idCache = {};
+
+async function espnGet(path){
+  let last;
+  for (const host of ESPN_HOSTS){
+    try { const r = await fetch(host + path); if (r.ok) return await r.json(); last = r.status; }
+    catch (e) { last = e; }
+  }
+  throw new Error(last);
+}
+async function teamId(label, league){
+  if (DATA.espnIds && DATA.espnIds[label]) return DATA.espnIds[label];
+  if (!idCache[league]){
+    const list = await espnGet('/' + league + '/teams?limit=' + (league === 'nfl' ? 50 : 900));
+    idCache[league] = {};
+    for (const g of list.sports[0].leagues[0].teams){
+      const t = g.team;
+      for (const k of [t.displayName, t.shortDisplayName, t.location, t.name, t.abbreviation])
+        if (k) idCache[league][normName(k)] = t.id;
+    }
+  }
+  return idCache[league][normName(label)] || null;
+}
+function scoreOf(side){
+  const s = side && side.score;
+  if (s && typeof s === 'object') return Number(s.value != null ? s.value : s.displayValue);
+  return Number(s);
+}
+function gameRow(ev, label, id){
+  const comp = (ev.competitions || [])[0] || {};
+  const sides = comp.competitors || [];
+  const me = sides.find(c => String((c.team||{}).id) === String(id)) ||
+             sides.find(c => normName((c.team||{}).displayName).includes(normName(label))) ||
+             sides[0] || {};
+  const opp = sides.find(c => c !== me) || {};
+  const st = ((comp.status || ev.status || {}).type) || {};
+  const d = new Date(ev.date);
+  const when = d.toLocaleDateString(undefined,{month:'short',day:'numeric'});
+
+  let cls = '', rs;
+  if (st.state === 'post'){
+    const a = scoreOf(me), b = scoreOf(opp);
+    cls = a > b ? 'w' : (a === b ? '' : 'l');
+    rs = '<b>' + (a > b ? 'W' : (a === b ? 'T' : 'L')) + ' ' + a + '–' + b + '</b>';
+  } else if (st.state === 'in'){
+    cls = 'live';
+    rs = esc(st.shortDetail || 'live') + ' <b>' + scoreOf(me) + '–' + scoreOf(opp) + '</b>';
+  } else {
+    rs = esc(d.toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'}));
+  }
+  const oppName = (opp.team||{}).shortDisplayName || (opp.team||{}).displayName || 'TBD';
+  const at = me.homeAway === 'away' ? 'at ' : 'vs ';
+  return '<div class="sgame ' + cls + '"><span class="dt">' + esc(when) + '</span>' +
+         '<span class="op">' + at + '<b>' + esc(oppName) + '</b></span>' +
+         '<span class="rs">' + rs + '</span></div>';
+}
+function closeSheet(){
+  const m = document.querySelector('.modal');
+  if (m) m.remove();
+  document.removeEventListener('keydown', escClose);
+}
+function escClose(e){ if (e.key === 'Escape') closeSheet(); }
+
+async function showSchedule(label){
+  const entry = DATA.roster.find(r => r.label === label) || {};
+  const rec = DATA.records[label] || {w:0,l:0,t:0};
+  closeSheet();
+  const wrap = document.createElement('div');
+  wrap.className = 'modal';
+  wrap.innerHTML = '<div class="sheet"><button class="x" aria-label="Close">×</button>' +
+    '<h3>' + esc(label) + '</h3><div class="meta">' + esc(entry.owner || '') + ' · ' + esc(entry.group || '') +
+    ' · <b>' + rec.w + '–' + rec.l + (rec.t ? '–' + rec.t : '') + '</b></div>' +
+    '<div id="sched"><div class="empty">Loading the schedule…</div></div></div>';
+  document.body.appendChild(wrap);
+  wrap.addEventListener('click', e => { if (e.target === wrap) closeSheet(); });
+  wrap.querySelector('.x').addEventListener('click', closeSheet);
+  document.addEventListener('keydown', escClose);
+
+  try {
+    const league = LEAGUE_OF(entry.group);
+    const id = await teamId(label, league);
+    if (!id) throw new Error('no id');
+    const data = await espnGet('/' + league + '/teams/' + id + '/schedule');
+    const events = (data.events || []).slice().sort((a,b) => new Date(a.date) - new Date(b.date));
+    const box = wrap.querySelector('#sched');
+    box.innerHTML = events.length
+      ? events.map(ev => gameRow(ev, label, id)).join('')
+      : '<div class="empty">ESPN has not posted this schedule yet.</div>';
+  } catch (err) {
+    const box = wrap.querySelector('#sched');
+    if (box) box.innerHTML = '<div class="empty">Could not load the schedule right now.</div>';
+  }
+}
+
 const LINE_COLORS = ["#FFB020","#5AA9E6","#43B072","#E2574C","#B78BE8","#3FC1C0","#E58AAE","#C7CBD1"];
 
 function renderChart(){
