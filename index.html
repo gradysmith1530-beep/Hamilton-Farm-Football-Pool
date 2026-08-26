@@ -85,6 +85,15 @@
   .nav{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
   .nav a{color:var(--amber);text-decoration:none;border-bottom:1px solid rgba(255,176,32,.4)}
   .nav a:hover{border-color:var(--amber)}
+  .chartbox{border:1px solid var(--line);border-radius:2px;padding:14px 10px 8px;overflow:hidden}
+  .chartbox svg{width:100%;height:auto;display:block}
+  .chartbox .gridline{stroke:var(--line);stroke-width:1}
+  .chartbox .axis{fill:var(--dim);font-family:var(--mono);font-size:10px}
+  .chartbox .lbl{font-family:var(--disp);font-size:14px;letter-spacing:.03em;text-transform:uppercase;cursor:pointer}
+  .chartbox .lblnum{font-family:var(--mono);font-size:12px;font-weight:600;cursor:pointer}
+  .chartbox .ln{transition:opacity .15s}
+  .chartbox.hover .ln{opacity:.2}
+  .chartbox.hover .ln.on{opacity:1}
   .empty{font-family:var(--mono);font-size:12px;color:var(--dim);padding:18px;border:1px dashed var(--line);border-radius:2px;text-align:center}
 
   .foot{margin-top:34px;border-top:1px solid var(--line);padding-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
@@ -135,6 +144,11 @@
   <section>
     <div class="sechead"><h2>Standings</h2><span class="note">tap a name for that roster · green marks this week's wins</span></div>
     <div id="standings"><div class="empty">Reading the latest scores…</div></div>
+  </section>
+
+  <section>
+    <div class="sechead"><h2>Season so far</h2><span class="note">total wins after each week · tap a name to follow one</span></div>
+    <div id="chart"></div>
   </section>
 
   <section>
@@ -201,6 +215,7 @@ function render(){
     openOwner = openOwner === el.dataset.owner ? null : el.dataset.owner;
     render();
   }));
+  renderChart();
   renderLog();
 }
 function detailHTML(owner){
@@ -212,6 +227,72 @@ function detailHTML(owner){
              '<span class="rec"><b>'+r.w+'</b>–'+r.l+(r.t?'–'+r.t:'')+'</span></div>';
     }).join('') + '</div>').join('') + '</div>';
 }
+const LINE_COLORS = ["#FFB020","#5AA9E6","#43B072","#E2574C","#B78BE8","#3FC1C0","#E58AAE","#C7CBD1"];
+
+function renderChart(){
+  const host = document.getElementById('chart');
+  const weeks = DATA.weeks || [];
+  if (!weeks.length){
+    host.innerHTML = '<div class="empty">The season line starts once a week is in the books.</div>';
+    return;
+  }
+
+  const W = 720, H = 320, L = 30, R = 132, T = 14, B = 26;
+  const owners = DATA.owners;
+  const peak = Math.max(4, ...owners.map(o => Math.max(...weeks.map(w => w.totals[o] || 0))));
+  const stepSize = peak <= 20 ? 5 : peak <= 60 ? 10 : peak <= 140 ? 25 : 50;
+  const yMax = Math.ceil(peak / stepSize) * stepSize;
+  const x = i => L + (weeks.length === 1 ? (W-L-R)/2 : i * (W-L-R) / (weeks.length-1));
+  const y = v => (H-B) - (v / yMax) * (H-B-T);
+
+  let grid = '';
+  for (let v = 0; v <= yMax; v += stepSize){
+    grid += '<line class="gridline" x1="'+L+'" x2="'+(W-R+6)+'" y1="'+y(v)+'" y2="'+y(v)+'"/>' +
+            '<text class="axis" x="'+(L-6)+'" y="'+(y(v)+3.5)+'" text-anchor="end">'+v+'</text>';
+  }
+  const skip = Math.ceil(weeks.length / 12);
+  weeks.forEach((w,i) => {
+    if (i % skip === 0 || i === weeks.length-1)
+      grid += '<text class="axis" x="'+x(i)+'" y="'+(H-B+16)+'" text-anchor="middle">'+w.week+'</text>';
+  });
+
+  // where each name sits on the right, nudged apart so they never overlap
+  const ends = owners.map((o,i) => ({o, i, v: weeks[weeks.length-1].totals[o] || 0}))
+                     .sort((a,b) => y(a.v) - y(b.v));
+  let floor = T;
+  ends.forEach(e => { e.y = Math.max(floor, y(e.v)); floor = e.y + 15; });
+  const overflow = floor - 15 - (H-B);
+  if (overflow > 0) ends.forEach(e => e.y -= overflow);
+
+  const lines = ends.map(e => {
+    const color = LINE_COLORS[e.i % LINE_COLORS.length];
+    const pts = weeks.map((w,i) => x(i) + ',' + y(w.totals[e.o] || 0)).join(' ');
+    return '<g class="ln" data-owner="'+esc(e.o)+'">' +
+      (weeks.length === 1
+        ? '<circle cx="'+x(0)+'" cy="'+y(e.v)+'" r="4" fill="'+color+'"/>'
+        : '<polyline points="'+pts+'" fill="none" stroke="'+color+'" stroke-width="2.2" ' +
+          'stroke-linejoin="round" stroke-linecap="round"/>') +
+      '<circle cx="'+x(weeks.length-1)+'" cy="'+y(e.v)+'" r="3" fill="'+color+'"/>' +
+      '<line x1="'+(x(weeks.length-1)+3)+'" y1="'+y(e.v)+'" x2="'+(W-R+4)+'" y2="'+e.y+
+        '" stroke="'+color+'" stroke-width="1" opacity=".45"/>' +
+      '<text class="lbl" x="'+(W-R+8)+'" y="'+(e.y+5)+'" fill="'+color+'">'+esc(e.o)+'</text>' +
+      '<text class="lblnum" x="'+(W-2)+'" y="'+(e.y+5)+'" text-anchor="end" fill="'+color+'">'+e.v+'</text>' +
+      '</g>';
+  }).join('');
+
+  host.innerHTML = '<div class="chartbox"><svg viewBox="0 0 '+W+' '+H+'" role="img" ' +
+    'aria-label="Total wins by week for each owner">'+grid+lines+'</svg></div>';
+
+  const box = host.querySelector('.chartbox');
+  box.querySelectorAll('.ln').forEach(g => {
+    const on = () => { box.classList.add('hover'); box.querySelectorAll('.ln').forEach(z => z.classList.remove('on')); g.classList.add('on'); };
+    const off = () => box.classList.remove('hover');
+    g.addEventListener('mouseenter', on);
+    g.addEventListener('mouseleave', off);
+    g.addEventListener('click', ev => { ev.stopPropagation(); box.classList.contains('hover') && g.classList.contains('on') ? off() : on(); });
+  });
+}
+
 function renderLog(){
   const host = document.getElementById('log');
   if (!DATA.weeks.length){ host.innerHTML = '<div class="empty">The first week posts once games are played.</div>'; return; }

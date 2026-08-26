@@ -139,6 +139,16 @@
   .game.lost .when b{color:var(--flag)}
   .game.bye{opacity:.5}
   .game.bye .opp{font-style:italic}
+  .chip{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;
+        border:1px solid rgba(255,176,32,.45);color:var(--amber);border-radius:2px;padding:1px 4px;margin-left:5px;
+        white-space:nowrap}
+  .chip.none{border-color:var(--line);color:#4E5D68}
+  .slate .game{grid-template-columns:1fr 128px 116px}
+  .slate .game .mu{min-width:0;font-size:13.5px}
+  .slate .game .mu b{font-weight:500}
+  .slate .game.nopick{opacity:.42}
+  .filter{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--dim);margin:0 0 16px}
+  .filter input{accent-color:var(--amber)}
   .nav{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
   .nav a{color:var(--dim);text-decoration:none;border-bottom:1px solid var(--line)}
   .nav a:hover{color:var(--amber);border-color:var(--amber)}
@@ -185,7 +195,7 @@ const PATHS = {
   "college-football": "/college-football/scoreboard?groups=80&limit=300"
 };
 
-let ROSTER = null, GAMES = {}, view = "all", timer = null;
+let ROSTER = null, GAMES = {}, OWNER_OF = {}, view = "all", timer = null, poolOnly = true;
 
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const norm = s => String(s||"").toLowerCase().replace(/[^a-z0-9]/g,"");
@@ -217,6 +227,14 @@ function indexGames(json, league){
   return out;
 }
 
+function ownerChip(teamObj){
+  const t = teamObj || {};
+  for (const key of [t.displayName, t.shortDisplayName, t.location, t.name, t.abbreviation]){
+    const hit = key && OWNER_OF[norm(key)];
+    if (hit) return '<span class="chip">' + esc(hit) + '</span>';
+  }
+  return '';
+}
 function opponentOf(entry){
   return (entry.comp.competitors || []).find(c => c !== entry.me) || {};
 }
@@ -234,9 +252,11 @@ function whenText(entry){
   return {cls:"", html: esc(d.toLocaleDateString(undefined,{weekday:'short'}) + ' ' +
                             d.toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'}))};
 }
-function lineText(entry){
+function lineText(entry, raw){
   const odds = (entry.comp.odds || [])[0];
   if (!odds) return '<span style="opacity:.5">no line</span>';
+  if (raw) return '<b>' + esc(odds.details || '—') + '</b>' +
+                  esc(odds.overUnder != null ? ' · O/U ' + odds.overUnder : '');
   let spread = "";
   const abbr = norm((entry.me.team||{}).abbreviation);
   if (odds.details){
@@ -255,14 +275,17 @@ function rankOf(side){
 
 function render(){
   document.getElementById('tabs').innerHTML =
-    ['all'].concat(ROSTER.owners).map(o =>
-      '<button class="' + (view===o?'on':'') + '" data-o="' + esc(o) + '">' + (o==='all'?'Everyone':esc(o)) + '</button>'
+    ['all','slate'].concat(ROSTER.owners).map(o =>
+      '<button class="' + (view===o?'on':'') + '" data-o="' + esc(o) + '">' +
+      (o==='all' ? 'By owner' : o==='slate' ? 'Full slate' : esc(o)) + '</button>'
     ).join('');
   document.querySelectorAll('.tabs button').forEach(b => b.addEventListener('click', () => {
     view = b.dataset.o; render();
   }));
 
-  const owners = view === 'all' ? ROSTER.owners : [view];
+  if (view === 'slate') return renderSlate();
+
+  const owners = ROSTER.owners.filter(o => view === 'all' || o === view);
   const liveIds = new Set();
 
   document.getElementById('slate').innerHTML = owners.map(owner => {
@@ -280,7 +303,8 @@ function render(){
         '<div class="game ' + when.cls + '">' +
           '<span class="tn">' + esc(t.label) + '</span>' +
           '<span class="opp">' + (home ? 'vs ' : 'at ') + rankOf(opp) +
-            '<b>' + esc((opp.team||{}).shortDisplayName || (opp.team||{}).displayName || 'TBD') + '</b></span>' +
+            '<b>' + esc((opp.team||{}).shortDisplayName || (opp.team||{}).displayName || 'TBD') + '</b>' +
+            ownerChip(opp.team) + '</span>' +
           '<span class="when">' + when.html + '</span>' +
           '<span class="line">' + lineText(entry) + '</span>' +
         '</div>'};
@@ -297,10 +321,55 @@ function render(){
   return liveIds.size;
 }
 
+function renderSlate(){
+  const liveIds = new Set();
+  const rows = [];
+  for (const league of Object.keys(GAMES)){
+    const seen = new Set();
+    for (const entry of Object.values(GAMES[league])){
+      const id = entry.ev.id || entry.ev.date + (entry.comp.competitors||[]).map(c => norm((c.team||{}).displayName)).sort().join('-');
+      if (seen.has(id)) continue;
+      seen.add(id);
+      const comps = entry.comp.competitors || [];
+      const home = comps.find(c => c.homeAway === 'home') || comps[0] || {};
+      const away = comps.find(c => c.homeAway === 'away') || comps[1] || {};
+      const chips = ownerChip(home.team) + ownerChip(away.team);
+      const when = whenText({ev: entry.ev, comp: entry.comp, me: home});
+      if (when.cls === 'live') liveIds.add(id);
+      const nm = side => esc((side.team||{}).shortDisplayName || (side.team||{}).displayName || 'TBD');
+      rows.push({
+        sort: new Date(entry.ev.date).getTime(),
+        pool: !!chips,
+        html: '<div class="game ' + when.cls + (chips ? '' : ' nopick') + '">' +
+          '<span class="mu">' + rankOf(away) + '<b>' + nm(away) + '</b>' + ownerChip(away.team) +
+            ' <span style="color:var(--dim)">at</span> ' + rankOf(home) + '<b>' + nm(home) + '</b>' + ownerChip(home.team) + '</span>' +
+          '<span class="when">' + when.html + '</span>' +
+          '<span class="line">' + lineText({comp: entry.comp, me: home}, true) + '</span>' +
+        '</div>'
+      });
+    }
+  }
+  rows.sort((a,b) => a.sort - b.sort);
+  const shown = rows.filter(r => !poolOnly || r.pool);
+
+  document.getElementById('slate').innerHTML =
+    '<div class="filter"><label><input type="checkbox" id="poolOnly"' + (poolOnly ? ' checked' : '') +
+    '> Only games somebody drafted</label><span style="opacity:.6">' + shown.length + ' of ' + rows.length + ' games</span></div>' +
+    '<div class="slate">' + (shown.length ? shown.map(r => r.html).join('')
+      : '<div class="empty">No games on the board yet this week.</div>') + '</div>';
+
+  document.getElementById('poolOnly').addEventListener('change', e => { poolOnly = e.target.checked; render(); });
+
+  clearInterval(timer);
+  if (liveIds.size) timer = setInterval(load, 60000);
+  return liveIds.size;
+}
+
 async function load(){
   try {
     if (!ROSTER){
       ROSTER = await (await fetch('teams.json')).json();
+      for (const t of ROSTER.teams){ OWNER_OF[norm(t.espn)] = t.owner; OWNER_OF[norm(t.label)] = t.owner; }
     }
     const [nfl, cfb] = await Promise.all([grab(PATHS['nfl']), grab(PATHS['college-football'])]);
     GAMES = {"nfl": indexGames(nfl, 'nfl'), "college-football": indexGames(cfb, 'college-football')};
