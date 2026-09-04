@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-04T04:11:25+00:00",
+ "updated": "2026-09-04T11:04:00+00:00",
  "week": 2,
  "owners": [
   "Kevin",
@@ -20,14 +20,14 @@
   "BIG12"
  ],
  "totals": {
-  "Kevin": 3,
+  "Kevin": 4,
   "Austin": 2,
   "Moskows": 0,
   "MikeChuck": 2,
-  "Grady": 0,
+  "Grady": 1,
   "Woj": 0,
   "Rick": 1,
-  "Fritzletta": 0
+  "Fritzletta": 1
  },
  "losses": {
   "Kevin": 0,
@@ -91,7 +91,7 @@
    "t": 0
   },
   "Utah": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
@@ -311,7 +311,7 @@
    "t": 0
   },
   "Minnesota": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
@@ -491,7 +491,7 @@
    "t": 0
   },
   "Illinois": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
@@ -1130,24 +1130,24 @@
    "week": 2,
    "date": "2026-09-04",
    "totals": {
-    "Kevin": 3,
+    "Kevin": 4,
     "Austin": 2,
     "Moskows": 0,
     "MikeChuck": 2,
-    "Grady": 0,
+    "Grady": 1,
     "Woj": 0,
     "Rick": 1,
-    "Fritzletta": 0
+    "Fritzletta": 1
    },
    "gained": {
-    "Kevin": 2,
+    "Kevin": 3,
     "Austin": 1,
     "Moskows": 0,
     "MikeChuck": 0,
-    "Grady": 0,
+    "Grady": 1,
     "Woj": 0,
     "Rick": 1,
-    "Fritzletta": 0
+    "Fritzletta": 1
    }
   }
  ],
