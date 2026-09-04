@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-03T11:03:59+00:00",
+ "updated": "2026-09-04T04:11:25+00:00",
  "week": 2,
  "owners": [
   "Kevin",
@@ -20,19 +20,19 @@
   "BIG12"
  ],
  "totals": {
-  "Kevin": 1,
-  "Austin": 1,
+  "Kevin": 3,
+  "Austin": 2,
   "Moskows": 0,
   "MikeChuck": 2,
   "Grady": 0,
   "Woj": 0,
-  "Rick": 0,
+  "Rick": 1,
   "Fritzletta": 0
  },
  "losses": {
   "Kevin": 0,
   "Austin": 1,
-  "Moskows": 0,
+  "Moskows": 2,
   "MikeChuck": 0,
   "Grady": 0,
   "Woj": 1,
@@ -86,7 +86,7 @@
    "t": 0
   },
   "Wake Forrest": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
@@ -96,7 +96,7 @@
    "t": 0
   },
   "Colorado": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
@@ -156,7 +156,7 @@
    "t": 0
   },
   "UCF": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
@@ -197,12 +197,12 @@
   },
   "Rutgers": {
    "w": 0,
-   "l": 0,
+   "l": 1,
    "t": 0
   },
   "GA Tech": {
    "w": 0,
-   "l": 0,
+   "l": 1,
    "t": 0
   },
   "Pitt": {
@@ -421,7 +421,7 @@
    "t": 0
   },
   "Missouri": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
@@ -1128,25 +1128,25 @@
   },
   {
    "week": 2,
-   "date": "2026-09-03",
+   "date": "2026-09-04",
    "totals": {
-    "Kevin": 1,
-    "Austin": 1,
+    "Kevin": 3,
+    "Austin": 2,
     "Moskows": 0,
     "MikeChuck": 2,
     "Grady": 0,
     "Woj": 0,
-    "Rick": 0,
+    "Rick": 1,
     "Fritzletta": 0
    },
    "gained": {
-    "Kevin": 0,
-    "Austin": 0,
+    "Kevin": 2,
+    "Austin": 1,
     "Moskows": 0,
     "MikeChuck": 0,
     "Grady": 0,
     "Woj": 0,
-    "Rick": 0,
+    "Rick": 1,
     "Fritzletta": 0
    }
   }
