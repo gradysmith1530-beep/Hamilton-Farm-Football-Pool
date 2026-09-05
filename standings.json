@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-04T11:04:00+00:00",
+ "updated": "2026-09-05T04:10:40+00:00",
  "week": 2,
  "owners": [
   "Kevin",
@@ -23,9 +23,9 @@
   "Kevin": 4,
   "Austin": 2,
   "Moskows": 0,
-  "MikeChuck": 2,
+  "MikeChuck": 3,
   "Grady": 1,
-  "Woj": 0,
+  "Woj": 2,
   "Rick": 1,
   "Fritzletta": 1
  },
@@ -251,7 +251,7 @@
    "t": 0
   },
   "USC": {
-   "w": 1,
+   "w": 2,
    "l": 0,
    "t": 0
   },
@@ -366,7 +366,7 @@
    "t": 0
   },
   "Oklahoma": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
@@ -391,7 +391,7 @@
    "t": 0
   },
   "Kansas": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
@@ -1128,14 +1128,14 @@
   },
   {
    "week": 2,
-   "date": "2026-09-04",
+   "date": "2026-09-05",
    "totals": {
     "Kevin": 4,
     "Austin": 2,
     "Moskows": 0,
-    "MikeChuck": 2,
+    "MikeChuck": 3,
     "Grady": 1,
-    "Woj": 0,
+    "Woj": 2,
     "Rick": 1,
     "Fritzletta": 1
    },
@@ -1143,9 +1143,9 @@
     "Kevin": 3,
     "Austin": 1,
     "Moskows": 0,
-    "MikeChuck": 0,
+    "MikeChuck": 1,
     "Grady": 1,
-    "Woj": 0,
+    "Woj": 2,
     "Rick": 1,
     "Fritzletta": 1
    }
