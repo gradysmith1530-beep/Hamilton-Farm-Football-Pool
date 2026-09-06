@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-06T04:10:54+00:00",
+ "updated": "2026-09-06T11:05:00+00:00",
  "week": 2,
  "owners": [
   "Kevin",
@@ -20,12 +20,12 @@
   "BIG12"
  ],
  "totals": {
-  "Kevin": 6,
+  "Kevin": 7,
   "Austin": 5,
-  "Moskows": 4,
-  "MikeChuck": 6,
+  "Moskows": 5,
+  "MikeChuck": 7,
   "Grady": 7,
-  "Woj": 5,
+  "Woj": 6,
   "Rick": 7,
   "Fritzletta": 7
  },
@@ -33,8 +33,8 @@
   "Kevin": 0,
   "Austin": 1,
   "Moskows": 2,
-  "MikeChuck": 1,
-  "Grady": 0,
+  "MikeChuck": 2,
+  "Grady": 1,
   "Woj": 2,
   "Rick": 0,
   "Fritzletta": 0
@@ -76,7 +76,7 @@
    "t": 0
   },
   "UCLA": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
@@ -211,7 +211,7 @@
    "t": 0
   },
   "AZ State": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
@@ -262,7 +262,7 @@
   },
   "Clemson": {
    "w": 0,
-   "l": 0,
+   "l": 1,
    "t": 0
   },
   "FL State": {
@@ -271,7 +271,7 @@
    "t": 0
   },
   "Arizona": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
@@ -322,7 +322,7 @@
   },
   "Cal": {
    "w": 0,
-   "l": 0,
+   "l": 1,
    "t": 0
   },
   "VA Tech": {
@@ -361,7 +361,7 @@
    "t": 0
   },
   "LSU": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
@@ -1130,22 +1130,22 @@
    "week": 2,
    "date": "2026-09-06",
    "totals": {
-    "Kevin": 6,
+    "Kevin": 7,
     "Austin": 5,
-    "Moskows": 4,
-    "MikeChuck": 6,
+    "Moskows": 5,
+    "MikeChuck": 7,
     "Grady": 7,
-    "Woj": 5,
+    "Woj": 6,
     "Rick": 7,
     "Fritzletta": 7
    },
    "gained": {
-    "Kevin": 5,
+    "Kevin": 6,
     "Austin": 4,
-    "Moskows": 4,
-    "MikeChuck": 4,
+    "Moskows": 5,
+    "MikeChuck": 5,
     "Grady": 7,
-    "Woj": 5,
+    "Woj": 6,
     "Rick": 7,
     "Fritzletta": 7
    }
