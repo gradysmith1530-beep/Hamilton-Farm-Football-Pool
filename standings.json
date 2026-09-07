@@ -1,6 +1,6 @@
 {
- "updated": "2026-09-06T11:05:00+00:00",
- "week": 2,
+ "updated": "2026-09-07T04:11:20+00:00",
+ "week": 3,
  "owners": [
   "Kevin",
   "Austin",
@@ -21,8 +21,8 @@
  ],
  "totals": {
   "Kevin": 7,
-  "Austin": 5,
-  "Moskows": 5,
+  "Austin": 7,
+  "Moskows": 6,
   "MikeChuck": 7,
   "Grady": 7,
   "Woj": 6,
@@ -30,13 +30,13 @@
   "Fritzletta": 7
  },
  "losses": {
-  "Kevin": 0,
+  "Kevin": 1,
   "Austin": 1,
   "Moskows": 2,
   "MikeChuck": 2,
   "Grady": 1,
   "Woj": 2,
-  "Rick": 0,
+  "Rick": 1,
   "Fritzletta": 0
  },
  "records": {
@@ -72,7 +72,7 @@
   },
   "Wisconsin": {
    "w": 0,
-   "l": 0,
+   "l": 1,
    "t": 0
   },
   "UCLA": {
@@ -136,12 +136,12 @@
    "t": 0
   },
   "Washington": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
   "Notre Dame": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
@@ -186,7 +186,7 @@
    "t": 0
   },
   "Ole Miss": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
@@ -442,7 +442,7 @@
   },
   "Louisville": {
    "w": 0,
-   "l": 0,
+   "l": 1,
    "t": 0
   },
   "Duke": {
@@ -1148,6 +1148,30 @@
     "Woj": 6,
     "Rick": 7,
     "Fritzletta": 7
+   }
+  },
+  {
+   "week": 3,
+   "date": "2026-09-07",
+   "totals": {
+    "Kevin": 7,
+    "Austin": 7,
+    "Moskows": 6,
+    "MikeChuck": 7,
+    "Grady": 7,
+    "Woj": 6,
+    "Rick": 7,
+    "Fritzletta": 7
+   },
+   "gained": {
+    "Kevin": 0,
+    "Austin": 2,
+    "Moskows": 1,
+    "MikeChuck": 0,
+    "Grady": 0,
+    "Woj": 0,
+    "Rick": 0,
+    "Fritzletta": 0
    }
   }
  ],
