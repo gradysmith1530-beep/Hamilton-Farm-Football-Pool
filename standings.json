@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-08T04:11:03+00:00",
+ "updated": "2026-09-08T11:04:17+00:00",
  "week": 3,
  "owners": [
   "Kevin",
@@ -27,13 +27,13 @@
   "Grady": 7,
   "Woj": 6,
   "Rick": 7,
-  "Fritzletta": 7
+  "Fritzletta": 8
  },
  "losses": {
   "Kevin": 1,
   "Austin": 1,
   "Moskows": 2,
-  "MikeChuck": 2,
+  "MikeChuck": 3,
   "Grady": 1,
   "Woj": 2,
   "Rick": 1,
@@ -267,7 +267,7 @@
   },
   "FL State": {
    "w": 1,
-   "l": 0,
+   "l": 1,
    "t": 0
   },
   "Arizona": {
@@ -501,7 +501,7 @@
    "t": 0
   },
   "SMU": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
@@ -1161,7 +1161,7 @@
     "Grady": 7,
     "Woj": 6,
     "Rick": 7,
-    "Fritzletta": 7
+    "Fritzletta": 8
    },
    "gained": {
     "Kevin": 0,
@@ -1171,7 +1171,7 @@
     "Grady": 0,
     "Woj": 0,
     "Rick": 0,
-    "Fritzletta": 0
+    "Fritzletta": 1
    }
   }
  ],
