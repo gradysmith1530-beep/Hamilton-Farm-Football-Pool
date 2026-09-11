@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-10T11:04:16+00:00",
+ "updated": "2026-09-11T04:11:49+00:00",
  "week": 3,
  "owners": [
   "Kevin",
@@ -25,12 +25,12 @@
   "Moskows": 6,
   "MikeChuck": 8,
   "Grady": 7,
-  "Woj": 6,
+  "Woj": 7,
   "Rick": 7,
-  "Fritzletta": 8
+  "Fritzletta": 9
  },
  "losses": {
-  "Kevin": 1,
+  "Kevin": 2,
   "Austin": 1,
   "Moskows": 2,
   "MikeChuck": 3,
@@ -42,7 +42,7 @@
  "records": {
   "Rams": {
    "w": 0,
-   "l": 0,
+   "l": 1,
    "t": 0
   },
   "Saints": {
@@ -381,7 +381,7 @@
    "t": 0
   },
   "Miami": {
-   "w": 1,
+   "w": 2,
    "l": 0,
    "t": 0
   },
@@ -461,7 +461,7 @@
    "t": 0
   },
   "49ers": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
@@ -1152,16 +1152,16 @@
   },
   {
    "week": 3,
-   "date": "2026-09-10",
+   "date": "2026-09-11",
    "totals": {
     "Kevin": 7,
     "Austin": 7,
     "Moskows": 6,
     "MikeChuck": 8,
     "Grady": 7,
-    "Woj": 6,
+    "Woj": 7,
     "Rick": 7,
-    "Fritzletta": 8
+    "Fritzletta": 9
    },
    "gained": {
     "Kevin": 0,
@@ -1169,9 +1169,9 @@
     "Moskows": 1,
     "MikeChuck": 1,
     "Grady": 0,
-    "Woj": 0,
+    "Woj": 1,
     "Rick": 0,
-    "Fritzletta": 1
+    "Fritzletta": 2
    }
   }
  ],
