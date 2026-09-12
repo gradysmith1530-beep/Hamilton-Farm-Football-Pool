@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-11T11:03:57+00:00",
+ "updated": "2026-09-12T04:10:56+00:00",
  "week": 3,
  "owners": [
   "Kevin",
@@ -20,22 +20,22 @@
   "BIG12"
  ],
  "totals": {
-  "Kevin": 7,
+  "Kevin": 8,
   "Austin": 7,
   "Moskows": 6,
   "MikeChuck": 8,
   "Grady": 7,
-  "Woj": 7,
-  "Rick": 7,
+  "Woj": 8,
+  "Rick": 9,
   "Fritzletta": 9
  },
  "losses": {
   "Kevin": 2,
   "Austin": 1,
-  "Moskows": 2,
+  "Moskows": 3,
   "MikeChuck": 3,
   "Grady": 2,
-  "Woj": 2,
+  "Woj": 3,
   "Rick": 1,
   "Fritzletta": 0
  },
@@ -81,7 +81,7 @@
    "t": 0
   },
   "Virginia": {
-   "w": 1,
+   "w": 2,
    "l": 0,
    "t": 0
   },
@@ -197,7 +197,7 @@
   },
   "Rutgers": {
    "w": 0,
-   "l": 1,
+   "l": 2,
    "t": 0
   },
   "GA Tech": {
@@ -386,13 +386,13 @@
    "t": 0
   },
   "NC State": {
-   "w": 0,
+   "w": 1,
    "l": 1,
    "t": 0
   },
   "Kansas": {
    "w": 1,
-   "l": 0,
+   "l": 1,
    "t": 0
   },
   "Okla State": {
@@ -421,7 +421,7 @@
    "t": 0
   },
   "Missouri": {
-   "w": 1,
+   "w": 2,
    "l": 0,
    "t": 0
   },
@@ -441,7 +441,7 @@
    "t": 0
   },
   "Louisville": {
-   "w": 0,
+   "w": 1,
    "l": 1,
    "t": 0
   },
@@ -1152,25 +1152,25 @@
   },
   {
    "week": 3,
-   "date": "2026-09-11",
+   "date": "2026-09-12",
    "totals": {
-    "Kevin": 7,
+    "Kevin": 8,
     "Austin": 7,
     "Moskows": 6,
     "MikeChuck": 8,
     "Grady": 7,
-    "Woj": 7,
-    "Rick": 7,
+    "Woj": 8,
+    "Rick": 9,
     "Fritzletta": 9
    },
    "gained": {
-    "Kevin": 0,
+    "Kevin": 1,
     "Austin": 2,
     "Moskows": 1,
     "MikeChuck": 1,
     "Grady": 0,
-    "Woj": 1,
-    "Rick": 0,
+    "Woj": 2,
+    "Rick": 2,
     "Fritzletta": 2
    }
   }
