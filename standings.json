@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-13T04:11:24+00:00",
+ "updated": "2026-09-13T11:03:57+00:00",
  "week": 3,
  "owners": [
   "Kevin",
@@ -20,10 +20,10 @@
   "BIG12"
  ],
  "totals": {
-  "Kevin": 14,
+  "Kevin": 15,
   "Austin": 13,
   "Moskows": 9,
-  "MikeChuck": 10,
+  "MikeChuck": 13,
   "Grady": 14,
   "Woj": 12,
   "Rick": 15,
@@ -33,7 +33,7 @@
   "Kevin": 2,
   "Austin": 3,
   "Moskows": 7,
-  "MikeChuck": 4,
+  "MikeChuck": 5,
   "Grady": 3,
   "Woj": 4,
   "Rick": 1,
@@ -91,7 +91,7 @@
    "t": 0
   },
   "Utah": {
-   "w": 1,
+   "w": 2,
    "l": 0,
    "t": 0
   },
@@ -241,17 +241,17 @@
    "t": 0
   },
   "Auburn": {
-   "w": 1,
+   "w": 2,
    "l": 0,
    "t": 0
   },
   "Arkansas": {
    "w": 1,
-   "l": 0,
+   "l": 1,
    "t": 0
   },
   "USC": {
-   "w": 2,
+   "w": 3,
    "l": 0,
    "t": 0
   },
@@ -261,7 +261,7 @@
    "t": 0
   },
   "Clemson": {
-   "w": 0,
+   "w": 1,
    "l": 1,
    "t": 0
   },
@@ -1154,20 +1154,20 @@
    "week": 3,
    "date": "2026-09-13",
    "totals": {
-    "Kevin": 14,
+    "Kevin": 15,
     "Austin": 13,
     "Moskows": 9,
-    "MikeChuck": 10,
+    "MikeChuck": 13,
     "Grady": 14,
     "Woj": 12,
     "Rick": 15,
     "Fritzletta": 13
    },
    "gained": {
-    "Kevin": 7,
+    "Kevin": 8,
     "Austin": 8,
     "Moskows": 4,
-    "MikeChuck": 3,
+    "MikeChuck": 6,
     "Grady": 7,
     "Woj": 6,
     "Rick": 8,
