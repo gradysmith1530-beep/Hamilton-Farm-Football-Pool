@@ -1,6 +1,6 @@
 {
- "updated": "2026-09-13T11:03:57+00:00",
- "week": 3,
+ "updated": "2026-09-14T04:11:18+00:00",
+ "week": 4,
  "owners": [
   "Kevin",
   "Austin",
@@ -20,24 +20,24 @@
   "BIG12"
  ],
  "totals": {
-  "Kevin": 15,
-  "Austin": 13,
+  "Kevin": 16,
+  "Austin": 15,
   "Moskows": 9,
   "MikeChuck": 13,
-  "Grady": 14,
-  "Woj": 12,
-  "Rick": 15,
-  "Fritzletta": 13
+  "Grady": 17,
+  "Woj": 15,
+  "Rick": 18,
+  "Fritzletta": 14
  },
  "losses": {
-  "Kevin": 2,
-  "Austin": 3,
-  "Moskows": 7,
-  "MikeChuck": 5,
+  "Kevin": 4,
+  "Austin": 5,
+  "Moskows": 11,
+  "MikeChuck": 7,
   "Grady": 3,
-  "Woj": 4,
+  "Woj": 5,
   "Rick": 1,
-  "Fritzletta": 3
+  "Fritzletta": 5
  },
  "records": {
   "Rams": {
@@ -47,16 +47,16 @@
   },
   "Saints": {
    "w": 0,
-   "l": 0,
+   "l": 1,
    "t": 0
   },
   "Texans": {
    "w": 0,
-   "l": 0,
+   "l": 1,
    "t": 0
   },
   "Bengals": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
@@ -102,22 +102,22 @@
   },
   "Packers": {
    "w": 0,
-   "l": 0,
+   "l": 1,
    "t": 0
   },
   "Bears": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
   "Raiders": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
   "Dolphins": {
    "w": 0,
-   "l": 0,
+   "l": 1,
    "t": 0
   },
   "Alabama": {
@@ -162,22 +162,22 @@
   },
   "Falcons": {
    "w": 0,
-   "l": 0,
+   "l": 1,
    "t": 0
   },
   "Buccaneers": {
    "w": 0,
-   "l": 0,
+   "l": 1,
    "t": 0
   },
   "Chargers": {
    "w": 0,
-   "l": 0,
+   "l": 1,
    "t": 0
   },
   "Titans": {
    "w": 0,
-   "l": 0,
+   "l": 1,
    "t": 0
   },
   "Texas": {
@@ -227,7 +227,7 @@
   },
   "Cowboys": {
    "w": 0,
-   "l": 0,
+   "l": 1,
    "t": 0
   },
   "Broncos": {
@@ -237,7 +237,7 @@
   },
   "Colts": {
    "w": 0,
-   "l": 0,
+   "l": 1,
    "t": 0
   },
   "Auburn": {
@@ -281,12 +281,12 @@
    "t": 0
   },
   "Eagles": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
   "Vikings": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
@@ -296,7 +296,7 @@
    "t": 0
   },
   "Bills": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
@@ -342,21 +342,21 @@
   },
   "Redskins": {
    "w": 0,
-   "l": 0,
+   "l": 1,
    "t": 0
   },
   "Cardinals": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
   "Steelers": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
   "Jets": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
@@ -401,12 +401,12 @@
    "t": 0
   },
   "Lions": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
   "Giants": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
@@ -416,7 +416,7 @@
    "t": 0
   },
   "Jaguars": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
@@ -467,17 +467,17 @@
   },
   "Panthers": {
    "w": 0,
-   "l": 0,
+   "l": 1,
    "t": 0
   },
   "Ravens": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
   "Browns": {
    "w": 0,
-   "l": 0,
+   "l": 1,
    "t": 0
   },
   "Tex A&M": {
@@ -1172,6 +1172,30 @@
     "Woj": 6,
     "Rick": 8,
     "Fritzletta": 6
+   }
+  },
+  {
+   "week": 4,
+   "date": "2026-09-14",
+   "totals": {
+    "Kevin": 16,
+    "Austin": 15,
+    "Moskows": 9,
+    "MikeChuck": 13,
+    "Grady": 17,
+    "Woj": 15,
+    "Rick": 18,
+    "Fritzletta": 14
+   },
+   "gained": {
+    "Kevin": 1,
+    "Austin": 2,
+    "Moskows": 0,
+    "MikeChuck": 0,
+    "Grady": 3,
+    "Woj": 3,
+    "Rick": 3,
+    "Fritzletta": 1
    }
   }
  ],
