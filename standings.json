@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-14T11:04:16+00:00",
+ "updated": "2026-09-15T04:12:17+00:00",
  "week": 4,
  "owners": [
   "Kevin",
@@ -26,14 +26,14 @@
   "MikeChuck": 13,
   "Grady": 17,
   "Woj": 15,
-  "Rick": 18,
+  "Rick": 19,
   "Fritzletta": 14
  },
  "losses": {
   "Kevin": 4,
   "Austin": 5,
   "Moskows": 11,
-  "MikeChuck": 7,
+  "MikeChuck": 8,
   "Grady": 3,
   "Woj": 5,
   "Rick": 1,
@@ -232,7 +232,7 @@
   },
   "Broncos": {
    "w": 0,
-   "l": 0,
+   "l": 1,
    "t": 0
   },
   "Colts": {
@@ -411,7 +411,7 @@
    "t": 0
   },
   "Chiefs": {
-   "w": 0,
+   "w": 1,
    "l": 0,
    "t": 0
   },
@@ -1176,7 +1176,7 @@
   },
   {
    "week": 4,
-   "date": "2026-09-14",
+   "date": "2026-09-15",
    "totals": {
     "Kevin": 16,
     "Austin": 15,
@@ -1184,7 +1184,7 @@
     "MikeChuck": 13,
     "Grady": 17,
     "Woj": 15,
-    "Rick": 18,
+    "Rick": 19,
     "Fritzletta": 14
    },
    "gained": {
@@ -1194,7 +1194,7 @@
     "MikeChuck": 0,
     "Grady": 3,
     "Woj": 3,
-    "Rick": 3,
+    "Rick": 4,
     "Fritzletta": 1
    }
   }
