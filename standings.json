@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-17T11:04:05+00:00",
+ "updated": "2026-09-18T04:11:24+00:00",
  "week": 4,
  "owners": [
   "Kevin",
@@ -22,9 +22,9 @@
  "totals": {
   "Kevin": 16,
   "Austin": 15,
-  "Moskows": 9,
+  "Moskows": 10,
   "MikeChuck": 13,
-  "Grady": 17,
+  "Grady": 18,
   "Woj": 15,
   "Rick": 19,
   "Fritzletta": 14
@@ -36,8 +36,8 @@
   "MikeChuck": 8,
   "Grady": 3,
   "Woj": 5,
-  "Rick": 1,
-  "Fritzletta": 5
+  "Rick": 2,
+  "Fritzletta": 6
  },
  "records": {
   "Rams": {
@@ -206,7 +206,7 @@
    "t": 0
   },
   "Pitt": {
-   "w": 2,
+   "w": 3,
    "l": 0,
    "t": 0
   },
@@ -296,7 +296,7 @@
    "t": 0
   },
   "Bills": {
-   "w": 1,
+   "w": 2,
    "l": 0,
    "t": 0
   },
@@ -402,7 +402,7 @@
   },
   "Lions": {
    "w": 1,
-   "l": 0,
+   "l": 1,
    "t": 0
   },
   "Giants": {
@@ -507,7 +507,7 @@
   },
   "Syracuse": {
    "w": 1,
-   "l": 1,
+   "l": 2,
    "t": 0
   },
   "Texas Tech": {
@@ -1176,13 +1176,13 @@
   },
   {
    "week": 4,
-   "date": "2026-09-17",
+   "date": "2026-09-18",
    "totals": {
     "Kevin": 16,
     "Austin": 15,
-    "Moskows": 9,
+    "Moskows": 10,
     "MikeChuck": 13,
-    "Grady": 17,
+    "Grady": 18,
     "Woj": 15,
     "Rick": 19,
     "Fritzletta": 14
@@ -1190,9 +1190,9 @@
    "gained": {
     "Kevin": 1,
     "Austin": 2,
-    "Moskows": 0,
+    "Moskows": 1,
     "MikeChuck": 0,
-    "Grady": 3,
+    "Grady": 4,
     "Woj": 3,
     "Rick": 4,
     "Fritzletta": 1
