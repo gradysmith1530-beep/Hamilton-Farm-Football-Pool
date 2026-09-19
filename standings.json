@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-19T04:11:15+00:00",
+ "updated": "2026-09-19T11:03:32+00:00",
  "week": 4,
  "owners": [
   "Kevin",
@@ -21,7 +21,7 @@
  ],
  "totals": {
   "Kevin": 16,
-  "Austin": 15,
+  "Austin": 16,
   "Moskows": 10,
   "MikeChuck": 13,
   "Grady": 18,
@@ -131,7 +131,7 @@
    "t": 0
   },
   "Oregon": {
-   "w": 1,
+   "w": 2,
    "l": 1,
    "t": 0
   },
@@ -1179,7 +1179,7 @@
    "date": "2026-09-19",
    "totals": {
     "Kevin": 16,
-    "Austin": 15,
+    "Austin": 16,
     "Moskows": 10,
     "MikeChuck": 13,
     "Grady": 18,
@@ -1189,7 +1189,7 @@
    },
    "gained": {
     "Kevin": 1,
-    "Austin": 2,
+    "Austin": 3,
     "Moskows": 1,
     "MikeChuck": 0,
     "Grady": 4,
