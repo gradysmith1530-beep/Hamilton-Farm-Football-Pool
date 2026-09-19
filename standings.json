@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-18T11:04:03+00:00",
+ "updated": "2026-09-19T04:11:15+00:00",
  "week": 4,
  "owners": [
   "Kevin",
@@ -25,16 +25,16 @@
   "Moskows": 10,
   "MikeChuck": 13,
   "Grady": 18,
-  "Woj": 15,
+  "Woj": 16,
   "Rick": 19,
-  "Fritzletta": 14
+  "Fritzletta": 15
  },
  "losses": {
-  "Kevin": 4,
+  "Kevin": 5,
   "Austin": 5,
   "Moskows": 11,
   "MikeChuck": 8,
-  "Grady": 3,
+  "Grady": 4,
   "Woj": 5,
   "Rick": 2,
   "Fritzletta": 6
@@ -87,7 +87,7 @@
   },
   "Wake Forrest": {
    "w": 2,
-   "l": 0,
+   "l": 1,
    "t": 0
   },
   "Utah": {
@@ -332,7 +332,7 @@
   },
   "Houston": {
    "w": 2,
-   "l": 0,
+   "l": 1,
    "t": 0
   },
   "K State": {
@@ -381,7 +381,7 @@
    "t": 0
   },
   "Miami": {
-   "w": 2,
+   "w": 3,
    "l": 0,
    "t": 0
   },
@@ -511,7 +511,7 @@
    "t": 0
   },
   "Texas Tech": {
-   "w": 2,
+   "w": 3,
    "l": 0,
    "t": 0
   },
@@ -1176,16 +1176,16 @@
   },
   {
    "week": 4,
-   "date": "2026-09-18",
+   "date": "2026-09-19",
    "totals": {
     "Kevin": 16,
     "Austin": 15,
     "Moskows": 10,
     "MikeChuck": 13,
     "Grady": 18,
-    "Woj": 15,
+    "Woj": 16,
     "Rick": 19,
-    "Fritzletta": 14
+    "Fritzletta": 15
    },
    "gained": {
     "Kevin": 1,
@@ -1193,9 +1193,9 @@
     "Moskows": 1,
     "MikeChuck": 0,
     "Grady": 4,
-    "Woj": 3,
+    "Woj": 4,
     "Rick": 4,
-    "Fritzletta": 1
+    "Fritzletta": 2
    }
   }
  ],
