@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-20T04:11:16+00:00",
+ "updated": "2026-09-20T11:03:48+00:00",
  "week": 4,
  "owners": [
   "Kevin",
@@ -20,10 +20,10 @@
   "BIG12"
  ],
  "totals": {
-  "Kevin": 20,
+  "Kevin": 21,
   "Austin": 21,
   "Moskows": 16,
-  "MikeChuck": 17,
+  "MikeChuck": 18,
   "Grady": 24,
   "Woj": 20,
   "Rick": 27,
@@ -76,7 +76,7 @@
    "t": 0
   },
   "UCLA": {
-   "w": 2,
+   "w": 3,
    "l": 0,
    "t": 0
   },
@@ -271,7 +271,7 @@
    "t": 0
   },
   "Arizona": {
-   "w": 1,
+   "w": 2,
    "l": 1,
    "t": 0
   },
@@ -1178,20 +1178,20 @@
    "week": 4,
    "date": "2026-09-20",
    "totals": {
-    "Kevin": 20,
+    "Kevin": 21,
     "Austin": 21,
     "Moskows": 16,
-    "MikeChuck": 17,
+    "MikeChuck": 18,
     "Grady": 24,
     "Woj": 20,
     "Rick": 27,
     "Fritzletta": 19
    },
    "gained": {
-    "Kevin": 5,
+    "Kevin": 6,
     "Austin": 8,
     "Moskows": 7,
-    "MikeChuck": 4,
+    "MikeChuck": 5,
     "Grady": 10,
     "Woj": 8,
     "Rick": 12,
