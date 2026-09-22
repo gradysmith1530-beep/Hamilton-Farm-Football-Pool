@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-21T11:04:41+00:00",
+ "updated": "2026-09-22T04:11:12+00:00",
  "week": 5,
  "owners": [
   "Kevin",
@@ -20,7 +20,7 @@
   "BIG12"
  ],
  "totals": {
-  "Kevin": 23,
+  "Kevin": 24,
   "Austin": 23,
   "Moskows": 16,
   "MikeChuck": 21,
@@ -36,12 +36,12 @@
   "MikeChuck": 12,
   "Grady": 5,
   "Woj": 12,
-  "Rick": 3,
+  "Rick": 4,
   "Fritzletta": 9
  },
  "records": {
   "Rams": {
-   "w": 0,
+   "w": 1,
    "l": 1,
    "t": 0
   },
@@ -407,7 +407,7 @@
   },
   "Giants": {
    "w": 1,
-   "l": 0,
+   "l": 1,
    "t": 0
   },
   "Chiefs": {
@@ -1200,9 +1200,9 @@
   },
   {
    "week": 5,
-   "date": "2026-09-21",
+   "date": "2026-09-22",
    "totals": {
-    "Kevin": 23,
+    "Kevin": 24,
     "Austin": 23,
     "Moskows": 16,
     "MikeChuck": 21,
@@ -1212,7 +1212,7 @@
     "Fritzletta": 22
    },
    "gained": {
-    "Kevin": 2,
+    "Kevin": 3,
     "Austin": 2,
     "Moskows": 0,
     "MikeChuck": 3,
