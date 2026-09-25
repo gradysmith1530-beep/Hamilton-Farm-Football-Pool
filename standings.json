@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-24T11:04:14+00:00",
+ "updated": "2026-09-25T04:11:20+00:00",
  "week": 5,
  "owners": [
   "Kevin",
@@ -22,7 +22,7 @@
  "totals": {
   "Kevin": 24,
   "Austin": 23,
-  "Moskows": 16,
+  "Moskows": 17,
   "MikeChuck": 21,
   "Grady": 27,
   "Woj": 20,
@@ -31,7 +31,7 @@
  },
  "losses": {
   "Kevin": 8,
-  "Austin": 9,
+  "Austin": 10,
   "Moskows": 16,
   "MikeChuck": 12,
   "Grady": 5,
@@ -102,7 +102,7 @@
   },
   "Packers": {
    "w": 1,
-   "l": 1,
+   "l": 2,
    "t": 0
   },
   "Bears": {
@@ -161,7 +161,7 @@
    "t": 0
   },
   "Falcons": {
-   "w": 0,
+   "w": 1,
    "l": 2,
    "t": 0
   },
@@ -1200,11 +1200,11 @@
   },
   {
    "week": 5,
-   "date": "2026-09-24",
+   "date": "2026-09-25",
    "totals": {
     "Kevin": 24,
     "Austin": 23,
-    "Moskows": 16,
+    "Moskows": 17,
     "MikeChuck": 21,
     "Grady": 27,
     "Woj": 20,
@@ -1214,7 +1214,7 @@
    "gained": {
     "Kevin": 3,
     "Austin": 2,
-    "Moskows": 0,
+    "Moskows": 1,
     "MikeChuck": 3,
     "Grady": 3,
     "Woj": 0,
