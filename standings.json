@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-25T11:03:54+00:00",
+ "updated": "2026-09-26T04:11:26+00:00",
  "week": 5,
  "owners": [
   "Kevin",
@@ -22,11 +22,11 @@
  "totals": {
   "Kevin": 24,
   "Austin": 23,
-  "Moskows": 17,
+  "Moskows": 18,
   "MikeChuck": 21,
   "Grady": 27,
   "Woj": 20,
-  "Rick": 28,
+  "Rick": 29,
   "Fritzletta": 22
  },
  "losses": {
@@ -37,7 +37,7 @@
   "Grady": 5,
   "Woj": 12,
   "Rick": 4,
-  "Fritzletta": 9
+  "Fritzletta": 10
  },
  "records": {
   "Rams": {
@@ -196,7 +196,7 @@
    "t": 0
   },
   "Rutgers": {
-   "w": 0,
+   "w": 1,
    "l": 3,
    "t": 0
   },
@@ -431,7 +431,7 @@
    "t": 0
   },
   "Indiana": {
-   "w": 3,
+   "w": 4,
    "l": 0,
    "t": 0
   },
@@ -497,7 +497,7 @@
   },
   "NWestern": {
    "w": 2,
-   "l": 0,
+   "l": 1,
    "t": 0
   },
   "SMU": {
@@ -1200,25 +1200,25 @@
   },
   {
    "week": 5,
-   "date": "2026-09-25",
+   "date": "2026-09-26",
    "totals": {
     "Kevin": 24,
     "Austin": 23,
-    "Moskows": 17,
+    "Moskows": 18,
     "MikeChuck": 21,
     "Grady": 27,
     "Woj": 20,
-    "Rick": 28,
+    "Rick": 29,
     "Fritzletta": 22
    },
    "gained": {
     "Kevin": 3,
     "Austin": 2,
-    "Moskows": 1,
+    "Moskows": 2,
     "MikeChuck": 3,
     "Grady": 3,
     "Woj": 0,
-    "Rick": 1,
+    "Rick": 2,
     "Fritzletta": 3
    }
   }
