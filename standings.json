@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-26T04:11:26+00:00",
+ "updated": "2026-09-26T11:03:34+00:00",
  "week": 5,
  "owners": [
   "Kevin",
@@ -23,7 +23,7 @@
   "Kevin": 24,
   "Austin": 23,
   "Moskows": 18,
-  "MikeChuck": 21,
+  "MikeChuck": 22,
   "Grady": 27,
   "Woj": 20,
   "Rick": 29,
@@ -34,7 +34,7 @@
   "Austin": 10,
   "Moskows": 16,
   "MikeChuck": 12,
-  "Grady": 5,
+  "Grady": 6,
   "Woj": 12,
   "Rick": 4,
   "Fritzletta": 10
@@ -261,7 +261,7 @@
    "t": 0
   },
   "Clemson": {
-   "w": 2,
+   "w": 3,
    "l": 1,
    "t": 0
   },
@@ -322,7 +322,7 @@
   },
   "Cal": {
    "w": 2,
-   "l": 1,
+   "l": 2,
    "t": 0
   },
   "VA Tech": {
@@ -1205,7 +1205,7 @@
     "Kevin": 24,
     "Austin": 23,
     "Moskows": 18,
-    "MikeChuck": 21,
+    "MikeChuck": 22,
     "Grady": 27,
     "Woj": 20,
     "Rick": 29,
@@ -1215,7 +1215,7 @@
     "Kevin": 3,
     "Austin": 2,
     "Moskows": 2,
-    "MikeChuck": 3,
+    "MikeChuck": 4,
     "Grady": 3,
     "Woj": 0,
     "Rick": 2,
