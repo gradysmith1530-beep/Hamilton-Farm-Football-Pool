@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-01T17:11:38+00:00",
+ "updated": "2026-10-02T10:20:14+00:00",
  "week": 6,
  "owners": [
   "Kevin",
@@ -27,7 +27,7 @@
   "Grady": 32,
   "Woj": 26,
   "Rick": 37,
-  "Fritzletta": 28
+  "Fritzletta": 29
  },
  "losses": {
   "Kevin": 13,
@@ -35,7 +35,7 @@
   "Moskows": 22,
   "MikeChuck": 15,
   "Grady": 12,
-  "Woj": 17,
+  "Woj": 18,
   "Rick": 7,
   "Fritzletta": 13
  },
@@ -352,7 +352,7 @@
   },
   "Steelers": {
    "w": 2,
-   "l": 1,
+   "l": 2,
    "t": 0
   },
   "Jets": {
@@ -476,7 +476,7 @@
    "t": 0
   },
   "Browns": {
-   "w": 2,
+   "w": 3,
    "l": 1,
    "t": 0
   },
@@ -1224,7 +1224,7 @@
   },
   {
    "week": 6,
-   "date": "2026-10-01",
+   "date": "2026-10-02",
    "totals": {
     "Kevin": 31,
     "Austin": 29,
@@ -1233,7 +1233,7 @@
     "Grady": 32,
     "Woj": 26,
     "Rick": 37,
-    "Fritzletta": 28
+    "Fritzletta": 29
    },
    "gained": {
     "Kevin": 0,
@@ -1243,7 +1243,7 @@
     "Grady": 2,
     "Woj": 2,
     "Rick": 4,
-    "Fritzletta": 3
+    "Fritzletta": 4
    }
   }
  ],
