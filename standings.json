@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-02T16:24:53+00:00",
+ "updated": "2026-10-03T09:41:44+00:00",
  "week": 6,
  "owners": [
   "Kevin",
@@ -22,20 +22,20 @@
  "totals": {
   "Kevin": 31,
   "Austin": 29,
-  "Moskows": 21,
+  "Moskows": 22,
   "MikeChuck": 30,
   "Grady": 32,
   "Woj": 26,
   "Rick": 37,
-  "Fritzletta": 29
+  "Fritzletta": 30
  },
  "losses": {
   "Kevin": 13,
   "Austin": 14,
   "Moskows": 22,
   "MikeChuck": 15,
-  "Grady": 12,
-  "Woj": 18,
+  "Grady": 13,
+  "Woj": 19,
   "Rick": 7,
   "Fritzletta": 13
  },
@@ -206,7 +206,7 @@
    "t": 0
   },
   "Pitt": {
-   "w": 4,
+   "w": 5,
    "l": 0,
    "t": 0
   },
@@ -327,7 +327,7 @@
   },
   "VA Tech": {
    "w": 4,
-   "l": 0,
+   "l": 1,
    "t": 0
   },
   "Houston": {
@@ -372,7 +372,7 @@
   },
   "Penn State": {
    "w": 3,
-   "l": 1,
+   "l": 2,
    "t": 0
   },
   "Michigan": {
@@ -496,7 +496,7 @@
    "t": 0
   },
   "NWestern": {
-   "w": 2,
+   "w": 3,
    "l": 1,
    "t": 0
   },
@@ -1224,26 +1224,26 @@
   },
   {
    "week": 6,
-   "date": "2026-10-02",
+   "date": "2026-10-03",
    "totals": {
     "Kevin": 31,
     "Austin": 29,
-    "Moskows": 21,
+    "Moskows": 22,
     "MikeChuck": 30,
     "Grady": 32,
     "Woj": 26,
     "Rick": 37,
-    "Fritzletta": 29
+    "Fritzletta": 30
    },
    "gained": {
     "Kevin": 0,
     "Austin": 2,
-    "Moskows": 0,
+    "Moskows": 1,
     "MikeChuck": 2,
     "Grady": 2,
     "Woj": 2,
     "Rick": 4,
-    "Fritzletta": 4
+    "Fritzletta": 5
    }
   }
  ],
