@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-05T11:12:38+00:00",
+ "updated": "2026-10-06T11:02:18+00:00",
  "week": 7,
  "owners": [
   "Kevin",
@@ -22,7 +22,7 @@
  "totals": {
   "Kevin": 35,
   "Austin": 33,
-  "Moskows": 24,
+  "Moskows": 25,
   "MikeChuck": 38,
   "Grady": 37,
   "Woj": 30,
@@ -30,7 +30,7 @@
   "Fritzletta": 39
  },
  "losses": {
-  "Kevin": 18,
+  "Kevin": 19,
   "Austin": 21,
   "Moskows": 27,
   "MikeChuck": 19,
@@ -47,7 +47,7 @@
   },
   "Saints": {
    "w": 1,
-   "l": 2,
+   "l": 3,
    "t": 0
   },
   "Texans": {
@@ -161,7 +161,7 @@
    "t": 0
   },
   "Falcons": {
-   "w": 1,
+   "w": 2,
    "l": 2,
    "t": 0
   },
@@ -1248,11 +1248,11 @@
   },
   {
    "week": 7,
-   "date": "2026-10-05",
+   "date": "2026-10-06",
    "totals": {
     "Kevin": 35,
     "Austin": 33,
-    "Moskows": 24,
+    "Moskows": 25,
     "MikeChuck": 38,
     "Grady": 37,
     "Woj": 30,
@@ -1262,7 +1262,7 @@
    "gained": {
     "Kevin": 1,
     "Austin": 2,
-    "Moskows": 0,
+    "Moskows": 1,
     "MikeChuck": 3,
     "Grady": 2,
     "Woj": 0,
