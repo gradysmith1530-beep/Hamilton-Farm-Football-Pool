@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-08T17:39:29+00:00",
+ "updated": "2026-10-09T11:09:00+00:00",
  "week": 7,
  "owners": [
   "Kevin",
@@ -22,7 +22,7 @@
  "totals": {
   "Kevin": 35,
   "Austin": 33,
-  "Moskows": 25,
+  "Moskows": 26,
   "MikeChuck": 38,
   "Grady": 37,
   "Woj": 30,
@@ -33,7 +33,7 @@
   "Kevin": 19,
   "Austin": 21,
   "Moskows": 27,
-  "MikeChuck": 19,
+  "MikeChuck": 20,
   "Grady": 18,
   "Woj": 23,
   "Rick": 13,
@@ -166,7 +166,7 @@
    "t": 0
   },
   "Buccaneers": {
-   "w": 0,
+   "w": 1,
    "l": 4,
    "t": 0
   },
@@ -227,7 +227,7 @@
   },
   "Cowboys": {
    "w": 2,
-   "l": 2,
+   "l": 3,
    "t": 0
   },
   "Broncos": {
@@ -1248,11 +1248,11 @@
   },
   {
    "week": 7,
-   "date": "2026-10-08",
+   "date": "2026-10-09",
    "totals": {
     "Kevin": 35,
     "Austin": 33,
-    "Moskows": 25,
+    "Moskows": 26,
     "MikeChuck": 38,
     "Grady": 37,
     "Woj": 30,
@@ -1262,7 +1262,7 @@
    "gained": {
     "Kevin": 1,
     "Austin": 2,
-    "Moskows": 1,
+    "Moskows": 2,
     "MikeChuck": 3,
     "Grady": 2,
     "Woj": 0,
