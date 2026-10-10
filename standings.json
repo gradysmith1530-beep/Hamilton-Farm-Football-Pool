@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-09T17:15:10+00:00",
+ "updated": "2026-10-10T10:26:32+00:00",
  "week": 7,
  "owners": [
   "Kevin",
@@ -26,14 +26,14 @@
   "MikeChuck": 38,
   "Grady": 37,
   "Woj": 30,
-  "Rick": 42,
-  "Fritzletta": 39
+  "Rick": 44,
+  "Fritzletta": 40
  },
  "losses": {
   "Kevin": 19,
-  "Austin": 21,
-  "Moskows": 27,
-  "MikeChuck": 20,
+  "Austin": 22,
+  "Moskows": 28,
+  "MikeChuck": 21,
   "Grady": 18,
   "Woj": 23,
   "Rick": 13,
@@ -137,7 +137,7 @@
   },
   "Washington": {
    "w": 3,
-   "l": 2,
+   "l": 3,
    "t": 0
   },
   "Notre Dame": {
@@ -217,7 +217,7 @@
   },
   "Iowa State": {
    "w": 3,
-   "l": 2,
+   "l": 3,
    "t": 0
   },
   "Seahawks": {
@@ -267,7 +267,7 @@
   },
   "FL State": {
    "w": 3,
-   "l": 2,
+   "l": 3,
    "t": 0
   },
   "Arizona": {
@@ -436,12 +436,12 @@
    "t": 0
   },
   "Iowa": {
-   "w": 4,
+   "w": 5,
    "l": 1,
    "t": 0
   },
   "Louisville": {
-   "w": 2,
+   "w": 3,
    "l": 3,
    "t": 0
   },
@@ -516,7 +516,7 @@
    "t": 0
   },
   "BYU": {
-   "w": 4,
+   "w": 5,
    "l": 0,
    "t": 0
   }
@@ -1248,7 +1248,7 @@
   },
   {
    "week": 7,
-   "date": "2026-10-09",
+   "date": "2026-10-10",
    "totals": {
     "Kevin": 35,
     "Austin": 33,
@@ -1256,8 +1256,8 @@
     "MikeChuck": 38,
     "Grady": 37,
     "Woj": 30,
-    "Rick": 42,
-    "Fritzletta": 39
+    "Rick": 44,
+    "Fritzletta": 40
    },
    "gained": {
     "Kevin": 1,
@@ -1266,8 +1266,8 @@
     "MikeChuck": 3,
     "Grady": 2,
     "Woj": 0,
-    "Rick": 3,
-    "Fritzletta": 3
+    "Rick": 5,
+    "Fritzletta": 4
    }
   }
  ],
