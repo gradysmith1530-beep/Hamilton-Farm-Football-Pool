@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-12T20:03:10+00:00",
+ "updated": "2026-10-13T11:26:45+00:00",
  "week": 8,
  "owners": [
   "Kevin",
@@ -24,13 +24,13 @@
   "Austin": 37,
   "Moskows": 30,
   "MikeChuck": 41,
-  "Grady": 42,
+  "Grady": 43,
   "Woj": 34,
   "Rick": 48,
   "Fritzletta": 45
  },
  "losses": {
-  "Kevin": 21,
+  "Kevin": 22,
   "Austin": 28,
   "Moskows": 33,
   "MikeChuck": 25,
@@ -42,7 +42,7 @@
  "records": {
   "Rams": {
    "w": 2,
-   "l": 2,
+   "l": 3,
    "t": 0
   },
   "Saints": {
@@ -296,7 +296,7 @@
    "t": 0
   },
   "Bills": {
-   "w": 3,
+   "w": 4,
    "l": 1,
    "t": 0
   },
@@ -1272,13 +1272,13 @@
   },
   {
    "week": 8,
-   "date": "2026-10-12",
+   "date": "2026-10-13",
    "totals": {
     "Kevin": 42,
     "Austin": 37,
     "Moskows": 30,
     "MikeChuck": 41,
-    "Grady": 42,
+    "Grady": 43,
     "Woj": 34,
     "Rick": 48,
     "Fritzletta": 45
@@ -1288,7 +1288,7 @@
     "Austin": 1,
     "Moskows": 0,
     "MikeChuck": 1,
-    "Grady": 2,
+    "Grady": 3,
     "Woj": 2,
     "Rick": 2,
     "Fritzletta": 2
