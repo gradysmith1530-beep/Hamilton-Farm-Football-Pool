@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-16T15:04:26+00:00",
+ "updated": "2026-10-17T08:16:51+00:00",
  "week": 8,
  "owners": [
   "Kevin",
@@ -21,7 +21,7 @@
  ],
  "totals": {
   "Kevin": 42,
-  "Austin": 37,
+  "Austin": 38,
   "Moskows": 30,
   "MikeChuck": 42,
   "Grady": 43,
@@ -136,7 +136,7 @@
    "t": 0
   },
   "Washington": {
-   "w": 3,
+   "w": 4,
    "l": 3,
    "t": 0
   },
@@ -1272,10 +1272,10 @@
   },
   {
    "week": 8,
-   "date": "2026-10-16",
+   "date": "2026-10-17",
    "totals": {
     "Kevin": 42,
-    "Austin": 37,
+    "Austin": 38,
     "Moskows": 30,
     "MikeChuck": 42,
     "Grady": 43,
@@ -1285,7 +1285,7 @@
    },
    "gained": {
     "Kevin": 2,
-    "Austin": 1,
+    "Austin": 2,
     "Moskows": 0,
     "MikeChuck": 2,
     "Grady": 3,
