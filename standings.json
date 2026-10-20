@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-19T17:15:25+00:00",
+ "updated": "2026-10-20T09:10:20+00:00",
  "week": 9,
  "owners": [
   "Kevin",
@@ -27,7 +27,7 @@
   "Grady": 49,
   "Woj": 39,
   "Rick": 51,
-  "Fritzletta": 53
+  "Fritzletta": 54
  },
  "losses": {
   "Kevin": 27,
@@ -35,7 +35,7 @@
   "Moskows": 40,
   "MikeChuck": 31,
   "Grady": 28,
-  "Woj": 33,
+  "Woj": 34,
   "Rick": 22,
   "Fritzletta": 19
  },
@@ -342,7 +342,7 @@
   },
   "Redskins": {
    "w": 1,
-   "l": 3,
+   "l": 4,
    "t": 1
   },
   "Cardinals": {
@@ -461,7 +461,7 @@
    "t": 0
   },
   "49ers": {
-   "w": 5,
+   "w": 6,
    "l": 0,
    "t": 0
   },
@@ -1296,7 +1296,7 @@
   },
   {
    "week": 9,
-   "date": "2026-10-19",
+   "date": "2026-10-20",
    "totals": {
     "Kevin": 48,
     "Austin": 43,
@@ -1305,7 +1305,7 @@
     "Grady": 49,
     "Woj": 39,
     "Rick": 51,
-    "Fritzletta": 53
+    "Fritzletta": 54
    },
    "gained": {
     "Kevin": 2,
@@ -1315,7 +1315,7 @@
     "Grady": 2,
     "Woj": 2,
     "Rick": 1,
-    "Fritzletta": 2
+    "Fritzletta": 3
    }
   }
  ],
