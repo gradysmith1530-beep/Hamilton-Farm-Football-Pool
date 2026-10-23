@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-22T15:44:17+00:00",
+ "updated": "2026-10-23T09:08:04+00:00",
  "week": 9,
  "owners": [
   "Kevin",
@@ -21,7 +21,7 @@
  ],
  "totals": {
   "Kevin": 48,
-  "Austin": 43,
+  "Austin": 44,
   "Moskows": 34,
   "MikeChuck": 45,
   "Grady": 49,
@@ -34,7 +34,7 @@
   "Austin": 31,
   "Moskows": 40,
   "MikeChuck": 31,
-  "Grady": 28,
+  "Grady": 29,
   "Woj": 34,
   "Rick": 22,
   "Fritzletta": 19
@@ -106,7 +106,7 @@
    "t": 0
   },
   "Bears": {
-   "w": 4,
+   "w": 5,
    "l": 2,
    "t": 0
   },
@@ -292,7 +292,7 @@
   },
   "Patriots": {
    "w": 4,
-   "l": 2,
+   "l": 3,
    "t": 0
   },
   "Bills": {
@@ -1296,10 +1296,10 @@
   },
   {
    "week": 9,
-   "date": "2026-10-22",
+   "date": "2026-10-23",
    "totals": {
     "Kevin": 48,
-    "Austin": 43,
+    "Austin": 44,
     "Moskows": 34,
     "MikeChuck": 45,
     "Grady": 49,
@@ -1309,7 +1309,7 @@
    },
    "gained": {
     "Kevin": 2,
-    "Austin": 2,
+    "Austin": 3,
     "Moskows": 1,
     "MikeChuck": 0,
     "Grady": 2,
