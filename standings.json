@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-26T17:04:14+00:00",
+ "updated": "2026-10-27T09:38:31+00:00",
  "week": 10,
  "owners": [
   "Kevin",
@@ -23,7 +23,7 @@
   "Kevin": 53,
   "Austin": 48,
   "Moskows": 38,
-  "MikeChuck": 48,
+  "MikeChuck": 49,
   "Grady": 52,
   "Woj": 45,
   "Rick": 57,
@@ -34,7 +34,7 @@
   "Austin": 36,
   "Moskows": 46,
   "MikeChuck": 36,
-  "Grady": 34,
+  "Grady": 35,
   "Woj": 38,
   "Rick": 25,
   "Fritzletta": 25
@@ -226,7 +226,7 @@
    "t": 0
   },
   "Cowboys": {
-   "w": 2,
+   "w": 3,
    "l": 4,
    "t": 0
   },
@@ -282,7 +282,7 @@
   },
   "Eagles": {
    "w": 2,
-   "l": 4,
+   "l": 5,
    "t": 0
   },
   "Vikings": {
@@ -1320,12 +1320,12 @@
   },
   {
    "week": 10,
-   "date": "2026-10-26",
+   "date": "2026-10-27",
    "totals": {
     "Kevin": 53,
     "Austin": 48,
     "Moskows": 38,
-    "MikeChuck": 48,
+    "MikeChuck": 49,
     "Grady": 52,
     "Woj": 45,
     "Rick": 57,
@@ -1335,7 +1335,7 @@
     "Kevin": 2,
     "Austin": 1,
     "Moskows": 2,
-    "MikeChuck": 2,
+    "MikeChuck": 3,
     "Grady": 1,
     "Woj": 1,
     "Rick": 2,
