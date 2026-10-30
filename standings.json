@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-29T17:11:23+00:00",
+ "updated": "2026-10-30T10:43:40+00:00",
  "week": 10,
  "owners": [
   "Kevin",
@@ -21,7 +21,7 @@
  ],
  "totals": {
   "Kevin": 53,
-  "Austin": 48,
+  "Austin": 49,
   "Moskows": 38,
   "MikeChuck": 49,
   "Grady": 52,
@@ -37,7 +37,7 @@
   "Grady": 35,
   "Woj": 38,
   "Rick": 25,
-  "Fritzletta": 25
+  "Fritzletta": 26
  },
  "records": {
   "Rams": {
@@ -101,7 +101,7 @@
    "t": 0
   },
   "Packers": {
-   "w": 4,
+   "w": 5,
    "l": 3,
    "t": 0
   },
@@ -467,7 +467,7 @@
   },
   "Panthers": {
    "w": 3,
-   "l": 3,
+   "l": 4,
    "t": 0
   },
   "Ravens": {
@@ -1320,10 +1320,10 @@
   },
   {
    "week": 10,
-   "date": "2026-10-29",
+   "date": "2026-10-30",
    "totals": {
     "Kevin": 53,
-    "Austin": 48,
+    "Austin": 49,
     "Moskows": 38,
     "MikeChuck": 49,
     "Grady": 52,
@@ -1333,7 +1333,7 @@
    },
    "gained": {
     "Kevin": 2,
-    "Austin": 1,
+    "Austin": 2,
     "Moskows": 2,
     "MikeChuck": 3,
     "Grady": 1,
