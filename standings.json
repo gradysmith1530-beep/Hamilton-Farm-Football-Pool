@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-30T16:52:36+00:00",
+ "updated": "2026-10-31T10:12:20+00:00",
  "week": 10,
  "owners": [
   "Kevin",
@@ -23,7 +23,7 @@
   "Kevin": 53,
   "Austin": 49,
   "Moskows": 38,
-  "MikeChuck": 49,
+  "MikeChuck": 50,
   "Grady": 52,
   "Woj": 45,
   "Rick": 57,
@@ -31,7 +31,7 @@
  },
  "losses": {
   "Kevin": 31,
-  "Austin": 36,
+  "Austin": 37,
   "Moskows": 46,
   "MikeChuck": 36,
   "Grady": 35,
@@ -157,7 +157,7 @@
   },
   "UCF": {
    "w": 4,
-   "l": 3,
+   "l": 4,
    "t": 0
   },
   "Falcons": {
@@ -276,7 +276,7 @@
    "t": 0
   },
   "Baylor": {
-   "w": 4,
+   "w": 5,
    "l": 3,
    "t": 0
   },
@@ -1320,12 +1320,12 @@
   },
   {
    "week": 10,
-   "date": "2026-10-30",
+   "date": "2026-10-31",
    "totals": {
     "Kevin": 53,
     "Austin": 49,
     "Moskows": 38,
-    "MikeChuck": 49,
+    "MikeChuck": 50,
     "Grady": 52,
     "Woj": 45,
     "Rick": 57,
@@ -1335,7 +1335,7 @@
     "Kevin": 2,
     "Austin": 2,
     "Moskows": 2,
-    "MikeChuck": 3,
+    "MikeChuck": 4,
     "Grady": 1,
     "Woj": 1,
     "Rick": 2,
