@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-31T15:55:07+00:00",
+ "updated": "2026-11-01T11:02:56+00:00",
  "week": 10,
  "owners": [
   "Kevin",
@@ -20,24 +20,24 @@
   "BIG12"
  ],
  "totals": {
-  "Kevin": 53,
-  "Austin": 49,
-  "Moskows": 38,
-  "MikeChuck": 50,
+  "Kevin": 58,
+  "Austin": 54,
+  "Moskows": 42,
+  "MikeChuck": 52,
   "Grady": 52,
-  "Woj": 45,
-  "Rick": 57,
-  "Fritzletta": 60
+  "Woj": 49,
+  "Rick": 62,
+  "Fritzletta": 64
  },
  "losses": {
-  "Kevin": 31,
-  "Austin": 37,
-  "Moskows": 46,
-  "MikeChuck": 36,
-  "Grady": 35,
-  "Woj": 38,
-  "Rick": 25,
-  "Fritzletta": 26
+  "Kevin": 34,
+  "Austin": 38,
+  "Moskows": 50,
+  "MikeChuck": 41,
+  "Grady": 39,
+  "Woj": 41,
+  "Rick": 27,
+  "Fritzletta": 28
  },
  "records": {
   "Rams": {
@@ -61,42 +61,42 @@
    "t": 0
   },
   "Georgia": {
-   "w": 6,
+   "w": 7,
    "l": 1,
    "t": 0
   },
   "Florida": {
    "w": 5,
-   "l": 2,
+   "l": 3,
    "t": 0
   },
   "Wisconsin": {
    "w": 5,
-   "l": 2,
+   "l": 3,
    "t": 0
   },
   "UCLA": {
-   "w": 7,
+   "w": 8,
    "l": 0,
    "t": 0
   },
   "Virginia": {
    "w": 4,
-   "l": 4,
+   "l": 5,
    "t": 0
   },
   "Wake Forrest": {
-   "w": 6,
+   "w": 7,
    "l": 1,
    "t": 0
   },
   "Utah": {
-   "w": 7,
+   "w": 8,
    "l": 0,
    "t": 0
   },
   "Colorado": {
-   "w": 2,
+   "w": 3,
    "l": 5,
    "t": 0
   },
@@ -126,32 +126,32 @@
    "t": 0
   },
   "S Carolina": {
-   "w": 4,
+   "w": 5,
    "l": 3,
    "t": 0
   },
   "Oregon": {
-   "w": 4,
+   "w": 5,
    "l": 3,
    "t": 0
   },
   "Washington": {
-   "w": 4,
+   "w": 5,
    "l": 3,
    "t": 0
   },
   "Notre Dame": {
-   "w": 6,
+   "w": 7,
    "l": 1,
    "t": 0
   },
   "N Carolina": {
    "w": 4,
-   "l": 3,
+   "l": 4,
    "t": 0
   },
   "TCU": {
-   "w": 3,
+   "w": 4,
    "l": 4,
    "t": 0
   },
@@ -181,42 +181,42 @@
    "t": 0
   },
   "Texas": {
-   "w": 5,
+   "w": 6,
    "l": 2,
    "t": 0
   },
   "Ole Miss": {
-   "w": 5,
+   "w": 6,
    "l": 2,
    "t": 0
   },
   "Ohio State": {
    "w": 6,
-   "l": 1,
+   "l": 2,
    "t": 0
   },
   "Rutgers": {
    "w": 2,
-   "l": 5,
+   "l": 6,
    "t": 0
   },
   "GA Tech": {
    "w": 2,
-   "l": 5,
+   "l": 6,
    "t": 0
   },
   "Pitt": {
-   "w": 5,
+   "w": 6,
    "l": 3,
    "t": 0
   },
   "AZ State": {
    "w": 4,
-   "l": 3,
+   "l": 4,
    "t": 0
   },
   "Iowa State": {
-   "w": 3,
+   "w": 4,
    "l": 4,
    "t": 0
   },
@@ -242,37 +242,37 @@
   },
   "Auburn": {
    "w": 4,
-   "l": 3,
+   "l": 4,
    "t": 0
   },
   "Arkansas": {
    "w": 3,
-   "l": 4,
+   "l": 5,
    "t": 0
   },
   "USC": {
-   "w": 6,
+   "w": 7,
    "l": 2,
    "t": 0
   },
   "Nebraska": {
    "w": 5,
-   "l": 2,
+   "l": 3,
    "t": 0
   },
   "Clemson": {
-   "w": 4,
+   "w": 5,
    "l": 3,
    "t": 0
   },
   "FL State": {
    "w": 3,
-   "l": 4,
+   "l": 5,
    "t": 0
   },
   "Arizona": {
    "w": 6,
-   "l": 1,
+   "l": 2,
    "t": 0
   },
   "Baylor": {
@@ -312,17 +312,17 @@
   },
   "Minnesota": {
    "w": 5,
-   "l": 2,
+   "l": 3,
    "t": 0
   },
   "Maryland": {
    "w": 2,
-   "l": 5,
+   "l": 6,
    "t": 0
   },
   "Cal": {
    "w": 3,
-   "l": 5,
+   "l": 6,
    "t": 0
   },
   "VA Tech": {
@@ -337,7 +337,7 @@
   },
   "K State": {
    "w": 4,
-   "l": 3,
+   "l": 4,
    "t": 0
   },
   "Redskins": {
@@ -367,37 +367,37 @@
   },
   "Oklahoma": {
    "w": 4,
-   "l": 3,
+   "l": 4,
    "t": 0
   },
   "Penn State": {
-   "w": 3,
+   "w": 4,
    "l": 4,
    "t": 0
   },
   "Michigan": {
-   "w": 4,
+   "w": 5,
    "l": 3,
    "t": 0
   },
   "Miami": {
-   "w": 7,
+   "w": 8,
    "l": 0,
    "t": 0
   },
   "NC State": {
-   "w": 3,
+   "w": 4,
    "l": 4,
    "t": 0
   },
   "Kansas": {
    "w": 3,
-   "l": 4,
+   "l": 5,
    "t": 0
   },
   "Okla State": {
    "w": 5,
-   "l": 2,
+   "l": 3,
    "t": 0
   },
   "Lions": {
@@ -421,38 +421,38 @@
    "t": 0
   },
   "Missouri": {
-   "w": 5,
+   "w": 6,
    "l": 2,
    "t": 0
   },
   "Miss State": {
    "w": 4,
-   "l": 3,
+   "l": 4,
    "t": 0
   },
   "Indiana": {
-   "w": 7,
+   "w": 8,
    "l": 1,
    "t": 0
   },
   "Iowa": {
-   "w": 5,
+   "w": 6,
    "l": 2,
    "t": 0
   },
   "Louisville": {
-   "w": 4,
+   "w": 5,
    "l": 3,
    "t": 0
   },
   "Duke": {
-   "w": 5,
+   "w": 6,
    "l": 2,
    "t": 0
   },
   "Cincinnati": {
    "w": 5,
-   "l": 2,
+   "l": 3,
    "t": 0
   },
   "West VA": {
@@ -491,32 +491,32 @@
    "t": 0
   },
   "Illinois": {
-   "w": 4,
+   "w": 5,
    "l": 3,
    "t": 0
   },
   "NWestern": {
    "w": 6,
-   "l": 1,
+   "l": 2,
    "t": 0
   },
   "SMU": {
    "w": 6,
-   "l": 1,
+   "l": 2,
    "t": 0
   },
   "Syracuse": {
-   "w": 3,
+   "w": 4,
    "l": 4,
    "t": 0
   },
   "Texas Tech": {
-   "w": 6,
+   "w": 7,
    "l": 1,
    "t": 0
   },
   "BYU": {
-   "w": 6,
+   "w": 7,
    "l": 1,
    "t": 0
   }
@@ -1320,26 +1320,26 @@
   },
   {
    "week": 10,
-   "date": "2026-10-31",
+   "date": "2026-11-01",
    "totals": {
-    "Kevin": 53,
-    "Austin": 49,
-    "Moskows": 38,
-    "MikeChuck": 50,
+    "Kevin": 58,
+    "Austin": 54,
+    "Moskows": 42,
+    "MikeChuck": 52,
     "Grady": 52,
-    "Woj": 45,
-    "Rick": 57,
-    "Fritzletta": 60
+    "Woj": 49,
+    "Rick": 62,
+    "Fritzletta": 64
    },
    "gained": {
-    "Kevin": 2,
-    "Austin": 2,
-    "Moskows": 2,
-    "MikeChuck": 4,
+    "Kevin": 7,
+    "Austin": 7,
+    "Moskows": 6,
+    "MikeChuck": 6,
     "Grady": 1,
-    "Woj": 1,
-    "Rick": 2,
-    "Fritzletta": 1
+    "Woj": 5,
+    "Rick": 7,
+    "Fritzletta": 5
    }
   }
  ],
