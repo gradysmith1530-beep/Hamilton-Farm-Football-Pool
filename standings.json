@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T18:23:12+00:00",
+ "updated": "2026-11-06T11:50:21+00:00",
  "week": 11,
  "owners": [
   "Kevin",
@@ -26,7 +26,7 @@
   "MikeChuck": 53,
   "Grady": 54,
   "Woj": 52,
-  "Rick": 64,
+  "Rick": 65,
   "Fritzletta": 64
  },
  "losses": {
@@ -37,7 +37,7 @@
   "Grady": 41,
   "Woj": 42,
   "Rick": 28,
-  "Fritzletta": 30
+  "Fritzletta": 31
  },
  "records": {
   "Rams": {
@@ -416,7 +416,7 @@
    "t": 0
   },
   "Jaguars": {
-   "w": 5,
+   "w": 6,
    "l": 2,
    "t": 0
   },
@@ -472,7 +472,7 @@
   },
   "Ravens": {
    "w": 4,
-   "l": 4,
+   "l": 5,
    "t": 0
   },
   "Browns": {
@@ -1344,7 +1344,7 @@
   },
   {
    "week": 11,
-   "date": "2026-11-05",
+   "date": "2026-11-06",
    "totals": {
     "Kevin": 60,
     "Austin": 56,
@@ -1352,7 +1352,7 @@
     "MikeChuck": 53,
     "Grady": 54,
     "Woj": 52,
-    "Rick": 64,
+    "Rick": 65,
     "Fritzletta": 64
    },
    "gained": {
@@ -1362,7 +1362,7 @@
     "MikeChuck": 1,
     "Grady": 2,
     "Woj": 3,
-    "Rick": 2,
+    "Rick": 3,
     "Fritzletta": 0
    }
   }
