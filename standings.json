@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-06T17:44:35+00:00",
+ "updated": "2026-11-07T10:53:38+00:00",
  "week": 11,
  "owners": [
   "Kevin",
@@ -23,18 +23,18 @@
   "Kevin": 60,
   "Austin": 56,
   "Moskows": 43,
-  "MikeChuck": 53,
+  "MikeChuck": 54,
   "Grady": 54,
   "Woj": 52,
   "Rick": 65,
-  "Fritzletta": 64
+  "Fritzletta": 66
  },
  "losses": {
   "Kevin": 34,
-  "Austin": 39,
+  "Austin": 40,
   "Moskows": 53,
-  "MikeChuck": 44,
-  "Grady": 41,
+  "MikeChuck": 45,
+  "Grady": 42,
   "Woj": 42,
   "Rick": 28,
   "Fritzletta": 31
@@ -152,7 +152,7 @@
   },
   "TCU": {
    "w": 4,
-   "l": 4,
+   "l": 5,
    "t": 0
   },
   "UCF": {
@@ -257,7 +257,7 @@
   },
   "Nebraska": {
    "w": 5,
-   "l": 3,
+   "l": 4,
    "t": 0
   },
   "Clemson": {
@@ -271,7 +271,7 @@
    "t": 0
   },
   "Arizona": {
-   "w": 6,
+   "w": 7,
    "l": 2,
    "t": 0
   },
@@ -327,7 +327,7 @@
   },
   "VA Tech": {
    "w": 6,
-   "l": 2,
+   "l": 3,
    "t": 0
   },
   "Houston": {
@@ -491,7 +491,7 @@
    "t": 0
   },
   "Illinois": {
-   "w": 5,
+   "w": 6,
    "l": 3,
    "t": 0
   },
@@ -501,7 +501,7 @@
    "t": 0
   },
   "SMU": {
-   "w": 6,
+   "w": 7,
    "l": 2,
    "t": 0
   },
@@ -1344,26 +1344,26 @@
   },
   {
    "week": 11,
-   "date": "2026-11-06",
+   "date": "2026-11-07",
    "totals": {
     "Kevin": 60,
     "Austin": 56,
     "Moskows": 43,
-    "MikeChuck": 53,
+    "MikeChuck": 54,
     "Grady": 54,
     "Woj": 52,
     "Rick": 65,
-    "Fritzletta": 64
+    "Fritzletta": 66
    },
    "gained": {
     "Kevin": 2,
     "Austin": 2,
     "Moskows": 1,
-    "MikeChuck": 1,
+    "MikeChuck": 2,
     "Grady": 2,
     "Woj": 3,
     "Rick": 3,
-    "Fritzletta": 0
+    "Fritzletta": 2
    }
   }
  ],
