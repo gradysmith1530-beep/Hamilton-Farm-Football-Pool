@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T18:39:10+00:00",
+ "updated": "2026-11-13T11:53:11+00:00",
  "week": 12,
  "owners": [
   "Kevin",
@@ -25,7 +25,7 @@
   "Moskows": 45,
   "MikeChuck": 61,
   "Grady": 59,
-  "Woj": 55,
+  "Woj": 56,
   "Rick": 71,
   "Fritzletta": 68
  },
@@ -36,7 +36,7 @@
   "MikeChuck": 47,
   "Grady": 47,
   "Woj": 50,
-  "Rick": 32,
+  "Rick": 33,
   "Fritzletta": 38
  },
  "records": {
@@ -341,7 +341,7 @@
    "t": 0
   },
   "Redskins": {
-   "w": 2,
+   "w": 3,
    "l": 5,
    "t": 1
   },
@@ -407,7 +407,7 @@
   },
   "Giants": {
    "w": 5,
-   "l": 2,
+   "l": 3,
    "t": 1
   },
   "Chiefs": {
@@ -1368,14 +1368,14 @@
   },
   {
    "week": 12,
-   "date": "2026-11-12",
+   "date": "2026-11-13",
    "totals": {
     "Kevin": 69,
     "Austin": 64,
     "Moskows": 45,
     "MikeChuck": 61,
     "Grady": 59,
-    "Woj": 55,
+    "Woj": 56,
     "Rick": 71,
     "Fritzletta": 68
    },
@@ -1385,7 +1385,7 @@
     "Moskows": 0,
     "MikeChuck": 3,
     "Grady": 1,
-    "Woj": 0,
+    "Woj": 1,
     "Rick": 3,
     "Fritzletta": 1
    }
