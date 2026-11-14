@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13T18:17:54+00:00",
+ "updated": "2026-11-14T11:14:14+00:00",
  "week": 12,
  "owners": [
   "Kevin",
@@ -20,10 +20,10 @@
   "BIG12"
  ],
  "totals": {
-  "Kevin": 69,
+  "Kevin": 71,
   "Austin": 64,
   "Moskows": 45,
-  "MikeChuck": 61,
+  "MikeChuck": 62,
   "Grady": 59,
   "Woj": 56,
   "Rick": 71,
@@ -32,12 +32,12 @@
  "losses": {
   "Kevin": 36,
   "Austin": 43,
-  "Moskows": 61,
+  "Moskows": 62,
   "MikeChuck": 47,
-  "Grady": 47,
+  "Grady": 48,
   "Woj": 50,
   "Rick": 33,
-  "Fritzletta": 38
+  "Fritzletta": 39
  },
  "records": {
   "Rams": {
@@ -76,7 +76,7 @@
    "t": 0
   },
   "UCLA": {
-   "w": 9,
+   "w": 10,
    "l": 0,
    "t": 0
   },
@@ -96,7 +96,7 @@
    "t": 0
   },
   "Colorado": {
-   "w": 3,
+   "w": 4,
    "l": 6,
    "t": 0
   },
@@ -207,7 +207,7 @@
   },
   "Pitt": {
    "w": 6,
-   "l": 3,
+   "l": 4,
    "t": 0
   },
   "AZ State": {
@@ -266,7 +266,7 @@
    "t": 0
   },
   "FL State": {
-   "w": 4,
+   "w": 5,
    "l": 5,
    "t": 0
   },
@@ -332,7 +332,7 @@
   },
   "Houston": {
    "w": 7,
-   "l": 2,
+   "l": 3,
    "t": 0
   },
   "K State": {
@@ -492,7 +492,7 @@
   },
   "Illinois": {
    "w": 6,
-   "l": 3,
+   "l": 4,
    "t": 0
   },
   "NWestern": {
@@ -1368,22 +1368,22 @@
   },
   {
    "week": 12,
-   "date": "2026-11-13",
+   "date": "2026-11-14",
    "totals": {
-    "Kevin": 69,
+    "Kevin": 71,
     "Austin": 64,
     "Moskows": 45,
-    "MikeChuck": 61,
+    "MikeChuck": 62,
     "Grady": 59,
     "Woj": 56,
     "Rick": 71,
     "Fritzletta": 68
    },
    "gained": {
-    "Kevin": 4,
+    "Kevin": 6,
     "Austin": 2,
     "Moskows": 0,
-    "MikeChuck": 3,
+    "MikeChuck": 4,
     "Grady": 1,
     "Woj": 1,
     "Rick": 3,
