@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T20:44:30+00:00",
+ "updated": "2026-11-17T12:48:23+00:00",
  "week": 13,
  "owners": [
   "Kevin",
@@ -22,7 +22,7 @@
  "totals": {
   "Kevin": 78,
   "Austin": 69,
-  "Moskows": 50,
+  "Moskows": 51,
   "MikeChuck": 67,
   "Grady": 63,
   "Woj": 60,
@@ -37,7 +37,7 @@
   "Grady": 54,
   "Woj": 57,
   "Rick": 38,
-  "Fritzletta": 43
+  "Fritzletta": 44
  },
  "records": {
   "Rams": {
@@ -171,7 +171,7 @@
    "t": 0
   },
   "Chargers": {
-   "w": 0,
+   "w": 1,
    "l": 8,
    "t": 0
   },
@@ -472,7 +472,7 @@
   },
   "Ravens": {
    "w": 4,
-   "l": 5,
+   "l": 6,
    "t": 0
   },
   "Browns": {
@@ -1392,11 +1392,11 @@
   },
   {
    "week": 13,
-   "date": "2026-11-16",
+   "date": "2026-11-17",
    "totals": {
     "Kevin": 78,
     "Austin": 69,
-    "Moskows": 50,
+    "Moskows": 51,
     "MikeChuck": 67,
     "Grady": 63,
     "Woj": 60,
@@ -1406,7 +1406,7 @@
    "gained": {
     "Kevin": 2,
     "Austin": 0,
-    "Moskows": 0,
+    "Moskows": 1,
     "MikeChuck": 2,
     "Grady": 2,
     "Woj": 1,
