@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19T19:15:52+00:00",
+ "updated": "2026-11-20T12:32:19+00:00",
  "week": 13,
  "owners": [
   "Kevin",
@@ -20,7 +20,7 @@
   "BIG12"
  ],
  "totals": {
-  "Kevin": 78,
+  "Kevin": 79,
   "Austin": 69,
   "Moskows": 51,
   "MikeChuck": 67,
@@ -33,7 +33,7 @@
   "Kevin": 39,
   "Austin": 49,
   "Moskows": 66,
-  "MikeChuck": 52,
+  "MikeChuck": 53,
   "Grady": 54,
   "Woj": 57,
   "Rick": 38,
@@ -51,7 +51,7 @@
    "t": 0
   },
   "Texans": {
-   "w": 3,
+   "w": 4,
    "l": 6,
    "t": 0
   },
@@ -237,7 +237,7 @@
   },
   "Colts": {
    "w": 3,
-   "l": 7,
+   "l": 8,
    "t": 0
   },
   "Auburn": {
@@ -1392,9 +1392,9 @@
   },
   {
    "week": 13,
-   "date": "2026-11-19",
+   "date": "2026-11-20",
    "totals": {
-    "Kevin": 78,
+    "Kevin": 79,
     "Austin": 69,
     "Moskows": 51,
     "MikeChuck": 67,
@@ -1404,7 +1404,7 @@
     "Fritzletta": 74
    },
    "gained": {
-    "Kevin": 2,
+    "Kevin": 3,
     "Austin": 0,
     "Moskows": 1,
     "MikeChuck": 2,
