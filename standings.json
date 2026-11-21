@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20T18:55:14+00:00",
+ "updated": "2026-11-21T12:09:22+00:00",
  "week": 13,
  "owners": [
   "Kevin",
@@ -21,9 +21,9 @@
  ],
  "totals": {
   "Kevin": 79,
-  "Austin": 69,
+  "Austin": 71,
   "Moskows": 51,
-  "MikeChuck": 67,
+  "MikeChuck": 68,
   "Grady": 63,
   "Woj": 60,
   "Rick": 77,
@@ -32,11 +32,11 @@
  "losses": {
   "Kevin": 39,
   "Austin": 49,
-  "Moskows": 66,
+  "Moskows": 67,
   "MikeChuck": 53,
   "Grady": 54,
   "Woj": 57,
-  "Rick": 38,
+  "Rick": 39,
   "Fritzletta": 44
  },
  "records": {
@@ -131,7 +131,7 @@
    "t": 0
   },
   "Oregon": {
-   "w": 7,
+   "w": 8,
    "l": 3,
    "t": 0
   },
@@ -156,7 +156,7 @@
    "t": 0
   },
   "UCF": {
-   "w": 5,
+   "w": 6,
    "l": 5,
    "t": 0
   },
@@ -217,7 +217,7 @@
   },
   "Iowa State": {
    "w": 5,
-   "l": 5,
+   "l": 6,
    "t": 0
   },
   "Seahawks": {
@@ -261,7 +261,7 @@
    "t": 0
   },
   "Clemson": {
-   "w": 6,
+   "w": 7,
    "l": 4,
    "t": 0
   },
@@ -447,7 +447,7 @@
   },
   "Duke": {
    "w": 7,
-   "l": 3,
+   "l": 4,
    "t": 0
   },
   "Cincinnati": {
@@ -1392,12 +1392,12 @@
   },
   {
    "week": 13,
-   "date": "2026-11-20",
+   "date": "2026-11-21",
    "totals": {
     "Kevin": 79,
-    "Austin": 69,
+    "Austin": 71,
     "Moskows": 51,
-    "MikeChuck": 67,
+    "MikeChuck": 68,
     "Grady": 63,
     "Woj": 60,
     "Rick": 77,
@@ -1405,9 +1405,9 @@
    },
    "gained": {
     "Kevin": 3,
-    "Austin": 0,
+    "Austin": 2,
     "Moskows": 1,
-    "MikeChuck": 2,
+    "MikeChuck": 3,
     "Grady": 2,
     "Woj": 1,
     "Rick": 3,
