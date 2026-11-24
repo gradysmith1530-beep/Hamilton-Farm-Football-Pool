@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T22:18:59+00:00",
+ "updated": "2026-11-24T14:35:24+00:00",
  "week": 14,
  "owners": [
   "Kevin",
@@ -25,12 +25,12 @@
   "Moskows": 54,
   "MikeChuck": 74,
   "Grady": 68,
-  "Woj": 66,
+  "Woj": 67,
   "Rick": 85,
   "Fritzletta": 78
  },
  "losses": {
-  "Kevin": 42,
+  "Kevin": 43,
   "Austin": 54,
   "Moskows": 74,
   "MikeChuck": 56,
@@ -57,7 +57,7 @@
   },
   "Bengals": {
    "w": 7,
-   "l": 2,
+   "l": 3,
    "t": 0
   },
   "Georgia": {
@@ -341,7 +341,7 @@
    "t": 0
   },
   "Redskins": {
-   "w": 3,
+   "w": 4,
    "l": 5,
    "t": 1
   },
@@ -1416,14 +1416,14 @@
   },
   {
    "week": 14,
-   "date": "2026-11-23",
+   "date": "2026-11-24",
    "totals": {
     "Kevin": 85,
     "Austin": 75,
     "Moskows": 54,
     "MikeChuck": 74,
     "Grady": 68,
-    "Woj": 66,
+    "Woj": 67,
     "Rick": 85,
     "Fritzletta": 78
    },
@@ -1433,7 +1433,7 @@
     "Moskows": 0,
     "MikeChuck": 2,
     "Grady": 2,
-    "Woj": 1,
+    "Woj": 2,
     "Rick": 3,
     "Fritzletta": 2
    }
