@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T20:18:32+00:00",
+ "updated": "2026-11-26T13:34:48+00:00",
  "week": 14,
  "owners": [
   "Kevin",
@@ -20,7 +20,7 @@
   "BIG12"
  ],
  "totals": {
-  "Kevin": 85,
+  "Kevin": 86,
   "Austin": 75,
   "Moskows": 54,
   "MikeChuck": 74,
@@ -31,7 +31,7 @@
  },
  "losses": {
   "Kevin": 43,
-  "Austin": 54,
+  "Austin": 55,
   "Moskows": 74,
   "MikeChuck": 56,
   "Grady": 60,
@@ -41,7 +41,7 @@
  },
  "records": {
   "Rams": {
-   "w": 6,
+   "w": 7,
    "l": 4,
    "t": 0
   },
@@ -102,7 +102,7 @@
   },
   "Packers": {
    "w": 6,
-   "l": 4,
+   "l": 5,
    "t": 0
   },
   "Bears": {
@@ -1416,9 +1416,9 @@
   },
   {
    "week": 14,
-   "date": "2026-11-25",
+   "date": "2026-11-26",
    "totals": {
-    "Kevin": 85,
+    "Kevin": 86,
     "Austin": 75,
     "Moskows": 54,
     "MikeChuck": 74,
@@ -1428,7 +1428,7 @@
     "Fritzletta": 78
    },
    "gained": {
-    "Kevin": 0,
+    "Kevin": 1,
     "Austin": 1,
     "Moskows": 0,
     "MikeChuck": 2,
