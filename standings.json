@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T19:55:20+00:00",
+ "updated": "2026-11-27T13:31:08+00:00",
  "week": 14,
  "owners": [
   "Kevin",
@@ -21,22 +21,22 @@
  ],
  "totals": {
   "Kevin": 86,
-  "Austin": 75,
+  "Austin": 76,
   "Moskows": 54,
   "MikeChuck": 74,
-  "Grady": 68,
+  "Grady": 70,
   "Woj": 67,
   "Rick": 85,
-  "Fritzletta": 78
+  "Fritzletta": 79
  },
  "losses": {
   "Kevin": 43,
-  "Austin": 55,
+  "Austin": 56,
   "Moskows": 74,
-  "MikeChuck": 56,
+  "MikeChuck": 57,
   "Grady": 60,
   "Woj": 62,
-  "Rick": 42,
+  "Rick": 44,
   "Fritzletta": 51
  },
  "records": {
@@ -106,7 +106,7 @@
    "t": 0
   },
   "Bears": {
-   "w": 8,
+   "w": 9,
    "l": 2,
    "t": 0
   },
@@ -152,7 +152,7 @@
   },
   "TCU": {
    "w": 5,
-   "l": 6,
+   "l": 7,
    "t": 0
   },
   "UCF": {
@@ -227,7 +227,7 @@
   },
   "Cowboys": {
    "w": 5,
-   "l": 6,
+   "l": 7,
    "t": 0
   },
   "Broncos": {
@@ -281,7 +281,7 @@
    "t": 0
   },
   "Eagles": {
-   "w": 3,
+   "w": 4,
    "l": 7,
    "t": 0
   },
@@ -296,7 +296,7 @@
    "t": 0
   },
   "Bills": {
-   "w": 9,
+   "w": 10,
    "l": 1,
    "t": 0
   },
@@ -402,7 +402,7 @@
   },
   "Lions": {
    "w": 8,
-   "l": 2,
+   "l": 3,
    "t": 0
   },
   "Giants": {
@@ -412,7 +412,7 @@
   },
   "Chiefs": {
    "w": 8,
-   "l": 2,
+   "l": 3,
    "t": 0
   },
   "Jaguars": {
@@ -511,7 +511,7 @@
    "t": 0
   },
   "Texas Tech": {
-   "w": 10,
+   "w": 11,
    "l": 1,
    "t": 0
   },
@@ -1416,26 +1416,26 @@
   },
   {
    "week": 14,
-   "date": "2026-11-26",
+   "date": "2026-11-27",
    "totals": {
     "Kevin": 86,
-    "Austin": 75,
+    "Austin": 76,
     "Moskows": 54,
     "MikeChuck": 74,
-    "Grady": 68,
+    "Grady": 70,
     "Woj": 67,
     "Rick": 85,
-    "Fritzletta": 78
+    "Fritzletta": 79
    },
    "gained": {
     "Kevin": 1,
-    "Austin": 1,
+    "Austin": 2,
     "Moskows": 0,
     "MikeChuck": 2,
-    "Grady": 2,
+    "Grady": 4,
     "Woj": 2,
     "Rick": 3,
-    "Fritzletta": 2
+    "Fritzletta": 3
    }
   }
  ],
