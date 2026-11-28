@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T19:44:03+00:00",
+ "updated": "2026-11-28T12:43:36+00:00",
  "week": 14,
  "owners": [
   "Kevin",
@@ -20,24 +20,24 @@
   "BIG12"
  ],
  "totals": {
-  "Kevin": 86,
+  "Kevin": 89,
   "Austin": 76,
-  "Moskows": 54,
+  "Moskows": 56,
   "MikeChuck": 74,
   "Grady": 70,
-  "Woj": 67,
-  "Rick": 85,
+  "Woj": 68,
+  "Rick": 86,
   "Fritzletta": 79
  },
  "losses": {
   "Kevin": 43,
   "Austin": 56,
   "Moskows": 74,
-  "MikeChuck": 57,
-  "Grady": 60,
+  "MikeChuck": 60,
+  "Grady": 61,
   "Woj": 62,
-  "Rick": 44,
-  "Fritzletta": 51
+  "Rick": 46,
+  "Fritzletta": 52
  },
  "records": {
   "Rams": {
@@ -66,12 +66,12 @@
    "t": 0
   },
   "Florida": {
-   "w": 7,
+   "w": 8,
    "l": 4,
    "t": 0
   },
   "Wisconsin": {
-   "w": 7,
+   "w": 8,
    "l": 4,
    "t": 0
   },
@@ -91,7 +91,7 @@
    "t": 0
   },
   "Utah": {
-   "w": 11,
+   "w": 12,
    "l": 0,
    "t": 0
   },
@@ -181,12 +181,12 @@
    "t": 0
   },
   "Texas": {
-   "w": 9,
+   "w": 10,
    "l": 2,
    "t": 0
   },
   "Ole Miss": {
-   "w": 7,
+   "w": 8,
    "l": 4,
    "t": 0
   },
@@ -232,7 +232,7 @@
   },
   "Broncos": {
    "w": 8,
-   "l": 2,
+   "l": 3,
    "t": 0
   },
   "Colts": {
@@ -257,7 +257,7 @@
   },
   "Nebraska": {
    "w": 7,
-   "l": 4,
+   "l": 5,
    "t": 0
   },
   "Clemson": {
@@ -267,7 +267,7 @@
   },
   "FL State": {
    "w": 5,
-   "l": 6,
+   "l": 7,
    "t": 0
   },
   "Arizona": {
@@ -312,7 +312,7 @@
   },
   "Minnesota": {
    "w": 6,
-   "l": 5,
+   "l": 6,
    "t": 0
   },
   "Maryland": {
@@ -351,7 +351,7 @@
    "t": 0
   },
   "Steelers": {
-   "w": 6,
+   "w": 7,
    "l": 4,
    "t": 0
   },
@@ -427,7 +427,7 @@
   },
   "Miss State": {
    "w": 5,
-   "l": 6,
+   "l": 7,
    "t": 0
   },
   "Indiana": {
@@ -436,7 +436,7 @@
    "t": 0
   },
   "Iowa": {
-   "w": 9,
+   "w": 10,
    "l": 2,
    "t": 0
   },
@@ -457,7 +457,7 @@
   },
   "West VA": {
    "w": 5,
-   "l": 6,
+   "l": 7,
    "t": 0
   },
   "49ers": {
@@ -482,7 +482,7 @@
   },
   "Tex A&M": {
    "w": 4,
-   "l": 7,
+   "l": 8,
    "t": 0
   },
   "Kentucky": {
@@ -1416,25 +1416,25 @@
   },
   {
    "week": 14,
-   "date": "2026-11-27",
+   "date": "2026-11-28",
    "totals": {
-    "Kevin": 86,
+    "Kevin": 89,
     "Austin": 76,
-    "Moskows": 54,
+    "Moskows": 56,
     "MikeChuck": 74,
     "Grady": 70,
-    "Woj": 67,
-    "Rick": 85,
+    "Woj": 68,
+    "Rick": 86,
     "Fritzletta": 79
    },
    "gained": {
-    "Kevin": 1,
+    "Kevin": 4,
     "Austin": 2,
-    "Moskows": 0,
+    "Moskows": 2,
     "MikeChuck": 2,
     "Grady": 4,
-    "Woj": 2,
-    "Rick": 3,
+    "Woj": 3,
+    "Rick": 4,
     "Fritzletta": 3
    }
   }
